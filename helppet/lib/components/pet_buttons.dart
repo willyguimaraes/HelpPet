@@ -25,15 +25,19 @@ class PetButton extends StatelessWidget {
           children: [
             Image.asset(
               imagePath,
-              width: 100, // Largura ajustável da imagem
-              height: 300, // Altura ajustável da imagem
+              fit: BoxFit.cover
+            
             ),
-            Text(
-              buttonText,
-              style: TextStyle(fontSize: 26,
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).colorScheme.secondary,
-               ),
+            const SizedBox(height: 30),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                buttonText,
+                style: TextStyle(fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.secondary,
+                 ),
+              ),
             ),
           ],
         ),

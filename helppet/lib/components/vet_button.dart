@@ -22,13 +22,23 @@ class VetButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.0),
            ), // Valor de arredondamento
         ),
-        child: Text(
-          buttonText,
-          style: TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-            color: Theme.of(context).colorScheme.secondary,
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset(
+              'assets/images/map_pin.png',
+              fit: BoxFit.cover
+            ),
+            const SizedBox(height: 30),
+            Text(
+              buttonText,
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.secondary,
+              ),
+            ),
+          ],
         ),
       ),
     );

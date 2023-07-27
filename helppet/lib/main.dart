@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'components/map_utils.dart';
 import 'components/pet_buttons.dart';
 import 'components/vet_Button.dart';
+import 'first_aid_list.dart';
 
 void main() {
-  runApp(Helppet());
+  runApp(
+   MaterialApp(
+    home: Helppet(),
+    ),
+  );
 }
 
 class Helppet extends StatelessWidget {
@@ -44,7 +49,8 @@ class Helppet extends StatelessWidget {
                   PetButton(
                     imagePath: 'assets/images/pet1.png',
                     onPressed: () {
-                      // Ação do botão 1
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: ((context) => const Aidlist())));
                     },
                     buttonText: 'Cães',
                   ),
