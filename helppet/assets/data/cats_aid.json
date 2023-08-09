@@ -1,0 +1,104 @@
+{
+  "Atropelamento": {
+    "nome": "Atropelamento",
+    "Emergência": "Mantenha o gato imóvel e evite movê-lo desnecessariamente. Transporte-o cuidadosamente em uma caixa de transporte para uma clínica veterinária",
+    "Cuidados adicionais": "Mantenha o gato aquecido e evite manipular áreas doloridas. Observe atentamente qualquer sinal de dificuldade respiratória ou choque.",
+    "foto": "url_da_foto_atropelamento.jpg"
+  },
+  "Choque": {
+    "nome": "Choque",
+    "Emergência": "Mantenha o gato aquecido com cobertores. Eleve levemente a parte traseira do corpo para melhorar o fluxo sanguíneo para órgãos vitais. Procure assistência veterinária imediatamente",
+    "Cuidados adicionais": "Após o atendimento veterinário, siga as orientações para monitorar a recuperação do gato e garantir que não haja complicações.",
+    "foto": "url_da_foto_choque.jpg"
+  },
+  "Choque elétrico": {
+    "nome": "Choque elétrico",
+    "Emergência": "Desconecte a fonte de eletricidade, se seguro fazer isso sem se machucar. Não toque no gato se ele ainda estiver em contato com uma fonte elétrica. Leve o gato ao veterinário imediatamente",
+    "Cuidados adicionais": "Mantenha o gato aquecido após a visita ao veterinário. Observe sinais de queimaduras internas ou complicações nos próximos dias.",
+    "foto": "url_da_foto_choque_eletrico.jpg"
+  },
+  "Corpos estranhos nos olhos": {
+    "nome": "Corpos estranhos nos olhos",
+    "Emergência": "Não tente remover objetos presos nos olhos do gato. Cubra o olho afetado com uma gaze limpa ou uma compressa úmida e leve-o ao veterinário imediatamente",
+    "Cuidados adicionais": "Após a remoção do objeto, siga as instruções do veterinário para tratar qualquer irritação ocular e prevenir infecções.",
+    "foto": "url_da_foto_corpos_estranhos_olhos.jpg"
+  },
+  "Engasgamento": {
+    "nome": "Engasgamento",
+    "Emergência": "Se o gato estiver engasgado, tente remover suavemente o objeto visível com os dedos ou uma pinça. Se não conseguir remover, procure ajuda veterinária imediatamente",
+    "Cuidados adicionais": "Monitore o gato nos próximos dias para garantir que ele não apresente dificuldades respiratórias ou complicações alimentares.",
+    "foto": "url_da_foto_engasgamento.jpg"
+  },
+  "Envenenamento": {
+    "nome": "Envenenamento",
+    "Emergência": "Se suspeitar que o gato ingeriu uma substância tóxica, entre em contato com o veterinário ou o centro de controle de intoxicações imediatamente. Não tente induzir vômito ou dar qualquer medicação sem orientação profissional",
+    "Cuidados adicionais": "Siga as orientações do veterinário para tratamento e monitoramento contínuo. Mantenha substâncias tóxicas fora do alcance do gato.",
+    "foto": "url_da_foto_envenenamento.jpg"
+  },
+  "Ferimentos": {
+    "nome": "Ferimentos",
+    "Emergência": "Use luvas e limpe a área afetada com água morna ou solução salina suave. Faça pressão com uma gaze ou pano limpo para controlar o sangramento. Não use pomadas ou medicamentos sem orientação veterinária. Cubra o ferimento com uma bandagem limpa e solta para proteger e evitar que o gato o lamba",
+    "Cuidados adicionais": "Mantenha o gato dentro de casa enquanto se recupera. Troque a bandagem conforme necessário e observe sinais de infecção.",
+    "foto": "url_da_foto_ferimentos.jpg"
+  },
+  "Fraturas": {
+    "nome": "Fraturas",
+    "Emergência": "Imobilize o gato cuidadosamente em uma superfície plana usando uma tábua ou papelão para evitar mais danos. Transporte o gato com cuidado para uma clínica veterinária",
+    "Cuidados adicionais": "Após a imobilização e tratamento, siga as instruções do veterinário para recuperação. Restrinja a atividade do gato conforme recomendado.",
+    "foto": "url_da_foto_fraturas.jpg"
+  },
+  "Fraturas dentárias": {
+    "nome": "Fraturas dentárias",
+    "Emergência": "Não tente manipular a boca do gato. Leve-o ao veterinário para avaliação e tratamento",
+    "Cuidados adicionais": "Ofereça alimentos macios enquanto o gato se recupera. Evite brinquedos duros que possam causar desconforto.",
+    "foto": "url_da_foto_fraturas_dentarias.jpg"
+  },
+  "Hipotermia (resfriamento excessivo)": {
+    "nome": "Hipotermia (resfriamento excessivo)",
+    "Emergência": "Aqueça o gato lentamente, enrolando-o em toalhas quentes. Não use calor direto, como água quente ou aquecedores. Leve o gato ao veterinário assim que possível",
+    "Cuidados adicionais": "Mantenha o gato aquecido e protegido de temperaturas frias. Evite situações que possam levar a um resfriamento excessivo novamente.",
+    "foto": "url_da_foto_hipotermia.jpg"
+  },
+  "Insolação ou hipertermia": {
+    "nome": "Insolação ou hipertermia",
+    "Emergência": "Mova o gato para um local fresco e sombreado. Ofereça água fresca para beber, mas não force o gato a beber. Umedeça o pelo do gato com água fria. Procure atendimento veterinário imediatamente",
+    "Cuidados adicionais": "Mantenha o gato hidratado e evite exposição excessiva ao calor. Observe sinais de desidratação ou superaquecimento.",
+    "foto": "url_da_foto_insolacao.jpg"
+  },
+  "Insuficiência respiratória": {
+    "nome": "Insuficiência respiratória",
+    "Emergência": "Verifique as vias aéreas para garantir que não estejam obstruídas. Se o gato não estiver respirando, aplique RCP (ressuscitação cardiopulmonar) suave, se souber como fazer, enquanto se dirige à clínica veterinária",
+    "Cuidados adicionais": "Monitore a respiração e a saúde respiratória do gato. Evite fatores que possam agravar a condição respiratória.",
+    "foto": "url_da_foto_insuficiencia_respiratoria.jpg"
+  },
+  "Intoxicação alimentar": {
+    "nome": "Intoxicação alimentar",
+    "Emergência": "Se souber qual substância o gato ingeriu, leve-a ao veterinário. Não tente induzir vômito ou administrar remédios sem orientação veterinária",
+    "Cuidados adicionais": "Evite alimentos desconhecidos e tóxicos. Mantenha alimentos fora do alcance do gato para prevenir futuras intoxicações.",
+    "foto": "url_da_foto_intoxicacao_alimentar.jpg"
+  },
+  "Parada cardíaca": {
+    "nome": "Parada cardíaca",
+    "Emergência": "Se o gato não estiver respirando e não tiver pulso, inicie a RCP enquanto procura ajuda veterinária",
+    "Cuidados adicionais": "Converse com o veterinário sobre medidas para prevenir problemas cardíacos futuros. Mantenha um ambiente seguro para o gato.",
+    "foto": "url_da_foto_parada_cardiaca.jpg"
+  },
+  "Picadas de insetos ou abelhas": {
+    "nome": "Picadas de insetos ou abelhas",
+    "Emergência": "Remova o ferrão com cuidado, se possível, usando uma pinça. Aplique compressas frias na área para reduzir o inchaço. Monitore o gato quanto a sinais de reações alérgicas graves e procure ajuda veterinária se necessário",
+    "Cuidados adicionais": "Mantenha o gato longe de áreas com muitos insetos. Consulte o veterinário sobre medidas preventivas e tratamento de alergias.",
+    "foto": "url_da_foto_picadas_insetos_abelhas.jpg"
+  },
+  "Queimaduras": {
+    "nome": "Queimaduras",
+    "Emergência": "Imediatamente enxágue a área queimada com água fria corrente por pelo menos 5 minutos. Cubra a queimadura com uma gaze estéril ou pano limpo e úmido. Não use gelo, pomadas ou outros produtos sem orientação veterinária",
+    "Cuidados adicionais": "Evite exposição a fontes de calor que possam piorar a queimadura. Siga as orientações do veterinário para curar a queimadura com segurança.",
+    "foto": "url_da_foto_queimaduras.jpg"
+  },
+  "Sangramento": {
+    "nome": "Sangramento",
+    "Emergência": "Pressione firmemente com gaze ou pano limpo sobre a área sangrando. Se possível, eleve a parte afetada para ajudar a controlar o sangramento",
+    "Cuidados adicionais": "Mantenha a área limpa e observe qualquer sinal de infecção. Evite atividades que possam reabrir o ferimento.",
+    "foto": "url_da_foto_sangramento.jpg"
+  }
+}

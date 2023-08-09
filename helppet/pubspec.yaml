@@ -71,7 +71,8 @@ flutter:
    - assets\images\pet1.png
    - assets\images\pet2.png
    - assets\images\map_pin.png
-   - assets/images/data/dogs_aid.json
+   - assets/data/dogs_aid.json
+   - assets/data/cats_aid.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

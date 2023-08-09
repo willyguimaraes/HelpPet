@@ -1,0 +1,182 @@
+{
+  "Alergias graves (anafilaxia)": {
+    "nome": "Alergias graves (anafilaxia)",
+    "foto": "url_da_foto16.jpg",
+    "Emergência": "Procure atendimento veterinário de emergência imediatamente",
+    "Cuidados adicionais": "Se o cachorro estiver preso em uma reação alérgica conhecida, administrar epinefrina (se recomendado pelo veterinário)"
+  },
+  "Asfixia": {
+    "nome": "Asfixia",
+    "foto": "url_da_foto22.jpg",
+    "Emergência": "Se o cachorro estiver sufocando, tente remover o objeto obstruindo suas vias respiratórias",
+    "Cuidados adicionais": "Caso não consiga remover o objeto, leve-o imediatamente ao veterinário"
+  },
+  "Atropelamento": {
+    "nome": "Atropelamento",
+    "foto": "url_da_foto29.jpg",
+    "Emergência": "Evite movimentar o cachorro desnecessariamente para não agravar possíveis lesões",
+    "Cuidados adicionais": "Transporte-o com cuidado para o veterinário"
+  },
+  "Choque elétrico": {
+    "nome": "Choque elétrico",
+    "foto": "url_da_foto23.jpg",
+    "Emergência": "Desligue a fonte de eletricidade, se possível, antes de tocar no cachorro",
+    "Cuidados adicionais": "Use materiais não condutores (como um cabo de vassoura) para afastar o cachorro da fonte de choque"
+  },
+  "Convulsões": {
+    "nome": "Convulsões",
+    "foto": "url_da_foto8.jpg",
+    "Emergência": "Mantenha o cachorro longe de objetos que possam causar ferimentos durante a convulsão",
+    "Cuidados adicionais": "Após a convulsão, mantenha-o calmo e leve ao veterinário para avaliação"
+  },
+  "Crises epiléticas": {
+    "nome": "Crises epiléticas",
+    "foto": "url_da_foto24.jpg",
+    "Emergência": "Mantenha o ambiente calmo e evite tocar ou segurar o cachorro durante a crise",
+    "Cuidados adicionais": "Após a crise, mantenha o cachorro em um ambiente tranquilo e procure o veterinário"
+  },
+  "Desmaio ou colapso súbito": {
+    "nome": "Desmaio ou colapso súbito",
+    "foto": "url_da_foto14.jpg",
+    "Emergência": "Coloque o cachorro deitado de lado, com a cabeça mais baixa que o corpo",
+    "Cuidados adicionais": "Mantenha-o calmo e tranquilo até chegar ao veterinário"
+  },
+  "Diarreia ou vômitos persistentes": {
+    "nome": "Diarreia ou vômitos persistentes",
+    "foto": "url_da_foto30.jpg",
+    "Emergência": "Mantenha o cachorro hidratado oferecendo água em pequenas quantidades",
+    "Cuidados adicionais": "Procure orientação do veterinário, pois pode ser um sinal de problemas de saúde"
+  },
+  "Emergências oftalmológicas": {
+    "nome": "Emergências oftalmológicas",
+    "foto": "url_da_foto27.jpg",
+    "Emergência": "Se o cachorro estiver com um objeto preso no olho, não tente removê-lo. Procure um veterinário",
+    "Cuidados adicionais": "Se houver vermelhidão, inchaço ou secreção nos olhos, procure assistência veterinária"
+  },
+  "Envenenamento": {
+    "nome": "Envenenamento",
+    "foto": "url_da_foto5.jpg",
+    "Emergência": "Entre em contato imediatamente com o veterinário ou um centro de controle de intoxicações",
+    "Cuidados adicionais": "Tente identificar a substância ingerida, se possível"
+  },
+  "Engasgamento": {
+    "nome": "Engasgamento",
+    "foto": "url_da_foto6.jpg",
+    "Emergência": "Se o cachorro está engasgado e não consegue respirar, abra sua boca com cuidado e tente remover o objeto com os dedos ou uma pinça, se visível",
+    "Cuidados adicionais": "Se não conseguir remover o objeto, tente a manobra de Heimlich para cães (peça instruções ao veterinário)"
+  },
+  "Feridas com suspeita de infecção": {
+    "nome": "Feridas com suspeita de infecção",
+    "foto": "url_da_foto26.jpg",
+    "Emergência": "Limpe a ferida com água e sabão ou solução salina",
+    "Cuidados adicionais": "Aplique um antisséptico próprio para animais e cubra com um curativo limpo"
+  },
+  "Feridas nos olhos": {
+    "nome": "Feridas nos olhos",
+    "foto": "url_da_foto18.jpg",
+    "Emergência": "Não tente remover nenhum objeto que esteja preso no olho",
+    "Cuidados adicionais": "Cubra o olho com uma gaze limpa e procure um veterinário"
+  },
+  "Feridas ou cortes": {
+    "nome": "Feridas ou cortes",
+    "foto": "url_da_foto3.jpg",
+    "Emergência": "Limpe a ferida com água oxigenada ou solução salina",
+    "Cuidados adicionais": "Cubra a ferida com um curativo limpo e vá ao veterinário para avaliação e tratamento adequado"
+  },
+  "Fraturas ou traumas": {
+    "nome": "Fraturas ou traumas",
+    "foto": "url_da_foto7.jpg",
+    "Emergência": "Imobilize a área afetada usando uma tala improvisada (uma tábua, revista dobrada) e uma bandagem firme",
+    "Cuidados adicionais": "Transporte o cachorro com cuidado para evitar agravar a lesão"
+  },
+  "Golpes ou acidentes de trânsito": {
+    "nome": "Golpes ou acidentes de trânsito",
+    "foto": "url_da_foto13.jpg",
+    "Emergência": "Mantenha o cachorro imobilizado e evite movê-lo desnecessariamente",
+    "Cuidados adicionais": "Cubra-o com uma manta ou toalha para mantê-lo aquecido. Transporte-o com cuidado para um veterinário"
+  },
+  "Hipertermia (golpe de calor)": {
+    "nome": "Hipertermia (golpe de calor)",
+    "foto": "url_da_foto9.jpg",
+    "Emergência": "Leve o cachorro para um local fresco e ventilado",
+    "Cuidados adicionais": "Resfrie-o com água fresca, mas não fria, e umedeça as patas e a barriga"
+  },
+  "Hipotermia (exposição ao frio)": {
+    "nome": "Hipotermia (exposição ao frio)",
+    "foto": "url_da_foto21.jpg",
+    "Emergência": "Aqueça o cachorro gradualmente com cobertores ou toalhas aquecidas",
+    "Cuidados adicionais": "Use uma bolsa de água quente, mas envolva-a em um pano para evitar queimaduras"
+  },
+  "Ingestão de objetos estranhos": {
+    "nome": "Ingestão de objetos estranhos",
+    "foto": "url_da_foto19.jpg",
+    "Emergência": "Se suspeitar que o cachorro ingeriu algo perigoso, procure assistência veterinária imediatamente",
+    "Cuidados adicionais": ""
+  },
+  "Intoxicação por produtos químicos ou venenos": {
+    "nome": "Intoxicação por produtos químicos ou venenos",
+    "foto": "url_da_foto10.jpg",
+    "Emergência": "Lave o cachorro com água corrente para remover o produto da pele ou pelos",
+    "Cuidados adicionais": "Não induza o vômito sem orientação veterinária, pois alguns produtos podem ser mais prejudiciais ao serem regurgitados"
+  },
+  "Parada respiratória ou cardíaca": {
+    "nome": "Parada respiratória ou cardíaca",
+    "foto": "url_da_foto1.jpg",
+    "Emergência": "Realize RCP (ressuscitação cardiopulmonar) adaptada para cachorros. Comprima o tórax com as palmas das mãos em um ritmo de 100-120 compressões por minuto, e intercale com respiração de socorro a cada 2-3 compressões",
+    "Cuidados adicionais": "Procure um veterinário o mais rápido possível"
+  },
+  "Pancadas na cabeça": {
+    "nome": "Pancadas na cabeça",
+    "foto": "url_da_foto25.jpg",
+    "Emergência": "Imobilize o pescoço e a cabeça do cachorro para evitar movimentos bruscos",
+    "Cuidados adicionais": "Leve o cachorro ao veterinário para avaliação neurológica"
+  },
+  "Picada de cobra venenosa": {
+    "nome": "Picada de cobra venenosa",
+    "foto": "url_da_foto20.jpg",
+    "Emergência": "Mantenha o cachorro calmo e imóvel para evitar que o veneno se espalhe mais rápido pelo corpo",
+    "Cuidados adicionais": "Transporte o cachorro com cuidado para uma clínica veterinária o mais rápido possível"
+  },
+  "Picadas de insetos ou abelhas": {
+    "nome": "Picadas de insetos ou abelhas",
+    "foto": "url_da_foto11.jpg",
+    "Emergência": "Remova o ferrão com cuidado, raspando a pele com uma lâmina ou cartão rígido",
+    "Cuidados adicionais": "Aplique gelo envolto em um pano para reduzir o inchaço"
+  },
+  "Problemas respiratórios": {
+    "nome": "Problemas respiratórios",
+    "foto": "url_da_foto15.jpg",
+    "Emergência": "Remova objetos ou obstruções próximas que possam dificultar a respiração",
+    "Cuidados adicionais": "Leve o cachorro para um local calmo e bem ventilado"
+  },
+  "Queimaduras": {
+    "nome": "Queimaduras",
+    "foto": "url_da_foto4.jpg",
+    "Emergência": "Resfrie a área afetada com água fria corrente por alguns minutos",
+    "Cuidados adicionais": "Cubra a queimadura com gaze ou pano limpo"
+  },
+  "Queimaduras por frio (queimaduras de gelo)": {
+    "nome": "Queimaduras por frio (queimaduras de gelo)",
+    "foto": "url_da_foto28.jpg",
+    "Emergência": "Nunca esfregue a área congelada",
+    "Cuidados adicionais": "Aqueça a área afetada com água morna (não quente) e procure o veterinário"
+  },
+  "Queimaduras químicas": {
+    "nome": "Queimaduras químicas",
+    "foto": "url_da_foto12.jpg",
+    "Emergência": "Lave a área afetada com água corrente por pelo menos 10 minutos",
+    "Cuidados adicionais": "Cubra a queimadura com uma gaze limpa e procure assistência veterinária"
+  },
+  "Queimaduras solares": {
+    "nome": "Queimaduras solares",
+    "foto": "url_da_foto17.jpg",
+    "Emergência": "Mantenha o cachorro dentro de casa ou em uma área sombreada",
+    "Cuidados adicionais": "Aplique aloe vera ou uma loção própria para queimaduras leves"
+  },
+  "Sangramento": {
+    "nome": "Sangramento",
+    "foto": "url_da_foto2.jpg",
+    "Emergência": "Pressione firmemente com gaze ou pano limpo sobre a área sangrando",
+    "Cuidados adicionais": "Se possível, eleve a parte afetada para ajudar a controlar o sangramento"
+  }
+}
