@@ -55,7 +55,7 @@ class EmergencyPage extends StatelessWidget {
                   children: [
                     Image.asset(
                       urlFoto,
-                      height: 200, // Altura da imagem
+                      height: 250, // Altura da imagem
                       fit: BoxFit.cover,
                     ),
                     Padding(
@@ -89,14 +89,17 @@ class EmergencyPage extends StatelessWidget {
                               Text(
                                 "${emergencia.split('.').indexOf(item) + 1} - ",
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 18,
                                 ),
                               ),
                               Flexible(
-                                child: Text(
-                                  item.trim(),
-                                  style: TextStyle(
-                                    fontSize: 20,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(5.0),
+                                  child: Text(
+                                    item.trim(),
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                    ),
                                   ),
                                 ),
                               ),

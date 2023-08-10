@@ -1,99 +1,75 @@
 {
   "Alergias graves (anafilaxia)": {
     "nome": "Alergias graves (anafilaxia)",
-    "foto": "url_da_foto16.jpg",
-    "Emergência": "Procure atendimento veterinário de emergência imediatamente",
+    "foto": "assets/images/alergia_dog.jpg",
+    "Emergência": "Mantenha o pescoço do animal esticado para facilitar a entrada e saída de ar para os pulmões.Preste atenção ao ambiente em que o animal estava na hora de início da reação, a fim de notar o agente causador do problema.Leve, imediatamente, o cão para a clínica ou hospital veterinário mais próximo, possibilitando a prestação do socorro necessário",
     "Cuidados adicionais": "Se o cachorro estiver preso em uma reação alérgica conhecida, administrar epinefrina (se recomendado pelo veterinário)"
   },
   "Asfixia": {
     "nome": "Asfixia",
-    "foto": "url_da_foto22.jpg",
-    "Emergência": "Se o cachorro estiver sufocando, tente remover o objeto obstruindo suas vias respiratórias",
+    "foto": "assets/images/asfixia_dog.jpg",
+    "Emergência": "Verifique se o cão está engasgado: Se o cão estiver com dificuldade para respirar, esticando o pescoço, com gengiva e língua azuis ou apresentando muita saliva, balançando a cabeça e passando a pata nas laterais do rosto, ele pode estar engasgado.Abra a boca do cão: Tente abrir a boca do animal e ver o objeto que está bloqueando as vias aéreas dele.Remova o objeto: Se o objeto for grande e visível, tente removê-lo da boca do cão com o auxílio de uma pinça ou com seus dedos, tendo cuidado para que o objeto não escorregue ainda mais para o fundo da garganta.Realize a manobra de Heimlich: Se o objeto for pequeno ou não for possível vê-lo, você pode tentar realizar a manobra de Heimlich, que é uma técnica usada para desobstruir as vias respiratórias em casos de asfixia por objeto.Leve o cão ao veterinário: Depois de prestar os primeiros socorros, é importante levar o cão ao veterinário para uma avaliação e tratamento adequado",
     "Cuidados adicionais": "Caso não consiga remover o objeto, leve-o imediatamente ao veterinário"
   },
   "Atropelamento": {
     "nome": "Atropelamento",
-    "foto": "url_da_foto29.jpg",
-    "Emergência": "Evite movimentar o cachorro desnecessariamente para não agravar possíveis lesões",
+    "foto": "assets/images/atropelamento_dog.jpg",
+    "Emergência": "Proteja o cão de mais acidentes: Imediatamente proteja o cão de mais acidentes, remova cuidadosamente o animal da área de tráfego.Verifique a respiração do cão: Depois de remover o cão da estrada, verifique sua respiração, se o animal estiver respirando, é recomendável ir imediatamente a um hospital veterinário.Transporte o cão com cuidado: O transporte do animal ferido deve ser feito com extremo cuidado, uma remoção sem os cuidados necessários pode piorar ou até causar uma nova fratura no animal. Cubra qualquer área com sangramento: Se você notar que há uma ferida com sangramento, cubra a área com um pano fazendo uma leve pressão para reduzir o sangramento.Procure atendimento veterinário: É importante lembrar que um cão atropelado deve sempre ser levado para ser examinado por um veterinário, mesmo que o acidente pareça inofensivo",
     "Cuidados adicionais": "Transporte-o com cuidado para o veterinário"
   },
   "Choque elétrico": {
     "nome": "Choque elétrico",
-    "foto": "url_da_foto23.jpg",
-    "Emergência": "Desligue a fonte de eletricidade, se possível, antes de tocar no cachorro",
-    "Cuidados adicionais": "Use materiais não condutores (como um cabo de vassoura) para afastar o cachorro da fonte de choque"
+    "foto": "assets/images/choque_dog.jpg",
+    "Emergência": "Não toque no animal para não levar um choque também.Se possível, tire o fio da tomada ou utilize um pedaço de madeira para afastar o animal do local do choque.Não dê nenhum medicamento ao cão e o encaminhe a um veterinário.Se o seu animal ainda estiver em contato com a fonte de energia, você nunca deve tocá-lo, desligue a energia desligando o fusível, ou, se isso não for possível, você pode tentar desconectar seu animal da fonte de alimentação usando um objeto que não conduz eletricidade (como plástico).Se o seu animal estiver inconsciente, verifique primeiro a respiração e o pulso, pois a corrente elétrica interrompe a atividade normal dos nervos e músculos. Se você não puder detectar nenhuma atividade cardíaca ou respiratória, inicie a reanimação imediatamente",
+    "Cuidados adicionais": "Em qualquer caso, consulte um veterinário, mesmo que o seu animal esteja novamente consciente"
   },
   "Convulsões": {
     "nome": "Convulsões",
-    "foto": "url_da_foto8.jpg",
-    "Emergência": "Mantenha o cachorro longe de objetos que possam causar ferimentos durante a convulsão",
-    "Cuidados adicionais": "Após a convulsão, mantenha-o calmo e leve ao veterinário para avaliação"
+    "foto": "assets/images/convulsao_dog.jpg",
+    "Emergência": "Aproxime-se por trás do animal e posicione uma almofada sob sua cabeça para evitar que, na agitação, ocorram choques, causadores de traumatismos.Mantenha o cachorro longe de objetos que possam causar ferimentos durante a convulsão.Leve-o imediatamente ao veterinário.No caminho, pressione o corpo do bicho sobre o seu, evitando que ele bata o corpo e se machuque",
+    "Cuidados adicionais": "Jamais puxe a língua do animal para fora da boca."
   },
   "Crises epiléticas": {
     "nome": "Crises epiléticas",
-    "foto": "url_da_foto24.jpg",
-    "Emergência": "Mantenha o ambiente calmo e evite tocar ou segurar o cachorro durante a crise",
-    "Cuidados adicionais": "Após a crise, mantenha o cachorro em um ambiente tranquilo e procure o veterinário"
+    "foto": "assets/images/eplepsia_dog.jpg",
+    "Emergência": "Mantenha a calma e aja racionalmente.Coloque o animal em uma superfície plana e estável para evitar que ele se machuque se cair ou se bater.Nunca tente puxar a língua ou colocar a mão dentro da boca do cão.Se o veterinário recomendou um anticonvulsivo, proceda conforme as suas indicações.Deixe que o cão se recupere a seu tempo quando terminar o ataque",
+    "Cuidados adicionais": "Siga as instruções do seu veterinário e faça todas as consultas necessárias. É importante também oferecer ao cão um ambiente livre de estresse e evitar situações de ansiedade e nervosismo, para prevenir crises."
   },
   "Desmaio ou colapso súbito": {
     "nome": "Desmaio ou colapso súbito",
-    "foto": "url_da_foto14.jpg",
-    "Emergência": "Coloque o cachorro deitado de lado, com a cabeça mais baixa que o corpo",
-    "Cuidados adicionais": "Mantenha-o calmo e tranquilo até chegar ao veterinário"
+    "foto": "assets/images/desmaio_dog.jpg",
+    "Emergência": "Coloque o cachorro deitado de lado, com a cabeça mais baixa que o corpo.Leve-o para uma área bem ventilada.Vá o mais rápido possível ao veterinário",
+    "Cuidados adicionais": "Vários fatores podem causar o desmaio, tente identificá-lo se possível"
   },
   "Diarreia ou vômitos persistentes": {
     "nome": "Diarreia ou vômitos persistentes",
-    "foto": "url_da_foto30.jpg",
-    "Emergência": "Mantenha o cachorro hidratado oferecendo água em pequenas quantidades",
-    "Cuidados adicionais": "Procure orientação do veterinário, pois pode ser um sinal de problemas de saúde"
+    "foto": "assets/images/vomito_dog.jpg",
+    "Emergência": "Submeta o cão a um jejum de 12 a 24 horas para eliminar a presença de comida no sistema digestivo para que não ocorram contrações nas paredes do intestino que servem para empurrar a comida.Durante esse período de jejum, permita que o cachorro tenha acesso a bastante água, sempre limpa e fresca.Ao fim do jejum diminua o tamanho das porções, refeições menores dão ao intestino um estímulo menor para se contrair violentamente.Procure sempre o veterinário para diagnosticar o problema e receitar uma dieta adequada",
+    "Cuidados adicionais": "Se o cão não melhorar como jejum, peça que o veterinário receite uma ração canina especial para o trato digestivo."
   },
   "Emergências oftalmológicas": {
     "nome": "Emergências oftalmológicas",
-    "foto": "url_da_foto27.jpg",
-    "Emergência": "Se o cachorro estiver com um objeto preso no olho, não tente removê-lo. Procure um veterinário",
-    "Cuidados adicionais": "Se houver vermelhidão, inchaço ou secreção nos olhos, procure assistência veterinária"
+    "foto": "assets/images/oftalmo_dog.jpg",
+    "Emergência": "Se o cachorro estiver com um objeto preso no olho, não tente removê-lo.Tente impedir que seu cão coce ou esfregue os olhos. Procure um veterinário",
+    "Cuidados adicionais": "Evite aplicar quaisquer remédios caseiros ou medicamentos sem a orientação de um veterinário"
   },
   "Envenenamento": {
     "nome": "Envenenamento",
-    "foto": "url_da_foto5.jpg",
-    "Emergência": "Entre em contato imediatamente com o veterinário ou um centro de controle de intoxicações",
-    "Cuidados adicionais": "Tente identificar a substância ingerida, se possível"
-  },
-  "Engasgamento": {
-    "nome": "Engasgamento",
-    "foto": "url_da_foto6.jpg",
-    "Emergência": "Se o cachorro está engasgado e não consegue respirar, abra sua boca com cuidado e tente remover o objeto com os dedos ou uma pinça, se visível",
-    "Cuidados adicionais": "Se não conseguir remover o objeto, tente a manobra de Heimlich para cães (peça instruções ao veterinário)"
+    "foto": "assets/images/veneno_dog.jpg",
+    "Emergência": "Remover a fonte do veneno.Lavar a boca do animal com água limpa.Tente identificar a substância ingerida, se possível.Levar o animal imediatamente ao veterinário.Se você perceber que seu cão ingeriu uma dose elevada de veneno, deve provocar-lhe o vômito imediatamente. Para tal, dê-lhe várias colheres de água com muito sal",
+    "Cuidados adicionais": " Caso o animal esteja acordado e consciente e se o cachorro apresentou sintomas de envenenamento a menos de 2 horas, o carvão ativado pode ser administrado como paliativo enquanto você se dirige ao veterinário."
   },
   "Feridas com suspeita de infecção": {
     "nome": "Feridas com suspeita de infecção",
-    "foto": "url_da_foto26.jpg",
-    "Emergência": "Limpe a ferida com água e sabão ou solução salina",
-    "Cuidados adicionais": "Aplique um antisséptico próprio para animais e cubra com um curativo limpo"
-  },
-  "Feridas nos olhos": {
-    "nome": "Feridas nos olhos",
-    "foto": "url_da_foto18.jpg",
-    "Emergência": "Não tente remover nenhum objeto que esteja preso no olho",
-    "Cuidados adicionais": "Cubra o olho com uma gaze limpa e procure um veterinário"
-  },
-  "Feridas ou cortes": {
-    "nome": "Feridas ou cortes",
-    "foto": "url_da_foto3.jpg",
-    "Emergência": "Limpe a ferida com água oxigenada ou solução salina",
-    "Cuidados adicionais": "Cubra a ferida com um curativo limpo e vá ao veterinário para avaliação e tratamento adequado"
+    "foto": "assets/images/ferida_dog.jpg",
+    "Emergência": "Limpe a ferida: Limpe suavemente a ferida com uma solução salina ou sabão neutro e água morna.Pare o sangramento: Se a ferida estiver sangrando, aplique pressão com um pano limpo ou curativo para ajudar a estancar o sangramento.Proteger a ferida: Cubra a ferida com um curativo limpo para mantê-la protegida de sujeira e detritos.Monitore a ferida: Fique de olho na ferida para detectar quaisquer alterações ou sinais de infecção, como vermelhidão, inchaço ou secreção,e se você notar algum desses sintomas, consulte um veterinário",
+    "Cuidados adicionais": "Embora feridas graves ou com sangramento devam ser tratadas por um veterinário, feridas menores podem ser tratadas em casa com os primeiros socorros adequados."
   },
   "Fraturas ou traumas": {
     "nome": "Fraturas ou traumas",
     "foto": "url_da_foto7.jpg",
     "Emergência": "Imobilize a área afetada usando uma tala improvisada (uma tábua, revista dobrada) e uma bandagem firme",
     "Cuidados adicionais": "Transporte o cachorro com cuidado para evitar agravar a lesão"
-  },
-  "Golpes ou acidentes de trânsito": {
-    "nome": "Golpes ou acidentes de trânsito",
-    "foto": "url_da_foto13.jpg",
-    "Emergência": "Mantenha o cachorro imobilizado e evite movê-lo desnecessariamente",
-    "Cuidados adicionais": "Cubra-o com uma manta ou toalha para mantê-lo aquecido. Transporte-o com cuidado para um veterinário"
   },
   "Hipertermia (golpe de calor)": {
     "nome": "Hipertermia (golpe de calor)",
@@ -112,12 +88,6 @@
     "foto": "url_da_foto19.jpg",
     "Emergência": "Se suspeitar que o cachorro ingeriu algo perigoso, procure assistência veterinária imediatamente",
     "Cuidados adicionais": ""
-  },
-  "Intoxicação por produtos químicos ou venenos": {
-    "nome": "Intoxicação por produtos químicos ou venenos",
-    "foto": "url_da_foto10.jpg",
-    "Emergência": "Lave o cachorro com água corrente para remover o produto da pele ou pelos",
-    "Cuidados adicionais": "Não induza o vômito sem orientação veterinária, pois alguns produtos podem ser mais prejudiciais ao serem regurgitados"
   },
   "Parada respiratória ou cardíaca": {
     "nome": "Parada respiratória ou cardíaca",

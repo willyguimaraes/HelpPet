@@ -73,6 +73,17 @@ flutter:
    - assets\images\map_pin.png
    - assets/data/dogs_aid.json
    - assets/data/cats_aid.json
+   - assets/images/alergia_dog.jpg
+   - assets/images/asfixia_dog.jpg
+   - assets/images/atropelamento_dog.jpg
+   - assets/images/choque_dog.jpg
+   - assets/images/convulsao_dog.jpg
+   - assets/images/eplepsia_dog.jpg
+   - assets/images/desmaio_dog.jpg
+   - assets/images/vomito_dog.jpg
+   - assets/images/oftalmo_dog.jpg
+   - assets/images/veneno_dog.jpg
+   - assets/images/ferida_dog.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
