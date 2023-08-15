@@ -31,7 +31,7 @@ class EmergencyPage extends StatelessWidget {
         ),
       ),
       home: Scaffold(
-        backgroundColor: Color.fromRGBO(247, 234, 135, 0.802),
+        backgroundColor: Color.fromARGB(198, 255, 255, 255),
         appBar: AppBar(
           title: Text(titulo),
           leading: ElevatedButton(
@@ -111,7 +111,7 @@ class EmergencyPage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(16.0),
                       child: Text(
-                        "Cuidados adicionais:",
+                        "Informações adicionais:",
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,

@@ -41,12 +41,13 @@ class Helppet extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+                const SizedBox(height: 20),
                 const Text(
                   'Selecione o pet:',
-                  style: TextStyle(fontSize: 34),
+                  style: TextStyle(fontSize: 34,
+                  color: Colors.white),
                 ),
-                const SizedBox(height: 20),
-                // Utilize a Column para agrupar os PetButtons um abaixo do outro
+                
                 Column(
                   children: [
                     PetButton(

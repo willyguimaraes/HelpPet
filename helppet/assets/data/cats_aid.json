@@ -43,8 +43,8 @@
   },
   "Hipotermia (resfriamento excessivo)": {
     "nome": "Hipotermia (resfriamento excessivo)",
-    "Emergência": "",
-    "Cuidados adicionais": "",
+    "Emergência": "Leve o seu gato para um ambiente aquecido e, se a pele ficar molhada, seque-o e embrulhe-o em uma toalha ou cobertor quente.Use uma bolsa de água quente para manter o gato aquecido, mas certifique-se de que não esteja muito quente.Depois de aquecer o gato, leve-o ao veterinário o quanto antes",
+    "Cuidados adicionais": "A umidade somada às baixas temperaturas tende a favorecer o desenvolvimento dos sintomas de hipotermia em gatos, mantenha-o seco e longe da umidade.",
     "foto": "assets/images/catsImages/hipotermia_cat.jpg"
   },
   "Insolação ou hipertermia": {
