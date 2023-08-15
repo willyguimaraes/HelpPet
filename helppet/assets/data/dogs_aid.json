@@ -1,152 +1,116 @@
 {
   "Alergias graves (anafilaxia)": {
     "nome": "Alergias graves (anafilaxia)",
-    "foto": "assets/images/alergia_dog.jpg",
+    "foto": "assets/images/dogsImages/alergia_dog.jpg",
     "Emergência": "Mantenha o pescoço do animal esticado para facilitar a entrada e saída de ar para os pulmões.Preste atenção ao ambiente em que o animal estava na hora de início da reação, a fim de notar o agente causador do problema.Leve, imediatamente, o cão para a clínica ou hospital veterinário mais próximo, possibilitando a prestação do socorro necessário",
     "Cuidados adicionais": "Se o cachorro estiver preso em uma reação alérgica conhecida, administrar epinefrina (se recomendado pelo veterinário)"
   },
   "Asfixia": {
     "nome": "Asfixia",
-    "foto": "assets/images/asfixia_dog.jpg",
+    "foto": "assets/images/dogsImages/asfixia_dog.jpg",
     "Emergência": "Verifique se o cão está engasgado: Se o cão estiver com dificuldade para respirar, esticando o pescoço, com gengiva e língua azuis ou apresentando muita saliva, balançando a cabeça e passando a pata nas laterais do rosto, ele pode estar engasgado.Abra a boca do cão: Tente abrir a boca do animal e ver o objeto que está bloqueando as vias aéreas dele.Remova o objeto: Se o objeto for grande e visível, tente removê-lo da boca do cão com o auxílio de uma pinça ou com seus dedos, tendo cuidado para que o objeto não escorregue ainda mais para o fundo da garganta.Realize a manobra de Heimlich: Se o objeto for pequeno ou não for possível vê-lo, você pode tentar realizar a manobra de Heimlich, que é uma técnica usada para desobstruir as vias respiratórias em casos de asfixia por objeto.Leve o cão ao veterinário: Depois de prestar os primeiros socorros, é importante levar o cão ao veterinário para uma avaliação e tratamento adequado",
     "Cuidados adicionais": "Caso não consiga remover o objeto, leve-o imediatamente ao veterinário"
   },
   "Atropelamento": {
     "nome": "Atropelamento",
-    "foto": "assets/images/atropelamento_dog.jpg",
+    "foto": "assets/images/dogsImages/atropelamento_dog.jpg",
     "Emergência": "Proteja o cão de mais acidentes: Imediatamente proteja o cão de mais acidentes, remova cuidadosamente o animal da área de tráfego.Verifique a respiração do cão: Depois de remover o cão da estrada, verifique sua respiração, se o animal estiver respirando, é recomendável ir imediatamente a um hospital veterinário.Transporte o cão com cuidado: O transporte do animal ferido deve ser feito com extremo cuidado, uma remoção sem os cuidados necessários pode piorar ou até causar uma nova fratura no animal. Cubra qualquer área com sangramento: Se você notar que há uma ferida com sangramento, cubra a área com um pano fazendo uma leve pressão para reduzir o sangramento.Procure atendimento veterinário: É importante lembrar que um cão atropelado deve sempre ser levado para ser examinado por um veterinário, mesmo que o acidente pareça inofensivo",
     "Cuidados adicionais": "Transporte-o com cuidado para o veterinário"
   },
   "Choque elétrico": {
     "nome": "Choque elétrico",
-    "foto": "assets/images/choque_dog.jpg",
+    "foto": "assets/images/dogsImages/choque_dog.jpg",
     "Emergência": "Não toque no animal para não levar um choque também.Se possível, tire o fio da tomada ou utilize um pedaço de madeira para afastar o animal do local do choque.Não dê nenhum medicamento ao cão e o encaminhe a um veterinário.Se o seu animal ainda estiver em contato com a fonte de energia, você nunca deve tocá-lo, desligue a energia desligando o fusível, ou, se isso não for possível, você pode tentar desconectar seu animal da fonte de alimentação usando um objeto que não conduz eletricidade (como plástico).Se o seu animal estiver inconsciente, verifique primeiro a respiração e o pulso, pois a corrente elétrica interrompe a atividade normal dos nervos e músculos. Se você não puder detectar nenhuma atividade cardíaca ou respiratória, inicie a reanimação imediatamente",
     "Cuidados adicionais": "Em qualquer caso, consulte um veterinário, mesmo que o seu animal esteja novamente consciente"
   },
   "Convulsões": {
     "nome": "Convulsões",
-    "foto": "assets/images/convulsao_dog.jpg",
+    "foto": "assets/images/dogsImages/convulsao_dog.jpg",
     "Emergência": "Aproxime-se por trás do animal e posicione uma almofada sob sua cabeça para evitar que, na agitação, ocorram choques, causadores de traumatismos.Mantenha o cachorro longe de objetos que possam causar ferimentos durante a convulsão.Leve-o imediatamente ao veterinário.No caminho, pressione o corpo do bicho sobre o seu, evitando que ele bata o corpo e se machuque",
     "Cuidados adicionais": "Jamais puxe a língua do animal para fora da boca."
   },
   "Crises epiléticas": {
     "nome": "Crises epiléticas",
-    "foto": "assets/images/eplepsia_dog.jpg",
+    "foto": "assets/images/dogsImages/eplepsia_dog.jpg",
     "Emergência": "Mantenha a calma e aja racionalmente.Coloque o animal em uma superfície plana e estável para evitar que ele se machuque se cair ou se bater.Nunca tente puxar a língua ou colocar a mão dentro da boca do cão.Se o veterinário recomendou um anticonvulsivo, proceda conforme as suas indicações.Deixe que o cão se recupere a seu tempo quando terminar o ataque",
     "Cuidados adicionais": "Siga as instruções do seu veterinário e faça todas as consultas necessárias. É importante também oferecer ao cão um ambiente livre de estresse e evitar situações de ansiedade e nervosismo, para prevenir crises."
   },
   "Desmaio ou colapso súbito": {
     "nome": "Desmaio ou colapso súbito",
-    "foto": "assets/images/desmaio_dog.jpg",
+    "foto": "assets/images/dogsImages/desmaio_dog.jpg",
     "Emergência": "Coloque o cachorro deitado de lado, com a cabeça mais baixa que o corpo.Leve-o para uma área bem ventilada.Vá o mais rápido possível ao veterinário",
     "Cuidados adicionais": "Vários fatores podem causar o desmaio, tente identificá-lo se possível"
   },
   "Diarreia ou vômitos persistentes": {
     "nome": "Diarreia ou vômitos persistentes",
-    "foto": "assets/images/vomito_dog.jpg",
+    "foto": "assets/images/dogsImages/vomito_dog.jpg",
     "Emergência": "Submeta o cão a um jejum de 12 a 24 horas para eliminar a presença de comida no sistema digestivo para que não ocorram contrações nas paredes do intestino que servem para empurrar a comida.Durante esse período de jejum, permita que o cachorro tenha acesso a bastante água, sempre limpa e fresca.Ao fim do jejum diminua o tamanho das porções, refeições menores dão ao intestino um estímulo menor para se contrair violentamente.Procure sempre o veterinário para diagnosticar o problema e receitar uma dieta adequada",
     "Cuidados adicionais": "Se o cão não melhorar como jejum, peça que o veterinário receite uma ração canina especial para o trato digestivo."
   },
   "Emergências oftalmológicas": {
     "nome": "Emergências oftalmológicas",
-    "foto": "assets/images/oftalmo_dog.jpg",
+    "foto": "assets/images/dogsImages/oftalmo_dog.jpg",
     "Emergência": "Se o cachorro estiver com um objeto preso no olho, não tente removê-lo.Tente impedir que seu cão coce ou esfregue os olhos. Procure um veterinário",
     "Cuidados adicionais": "Evite aplicar quaisquer remédios caseiros ou medicamentos sem a orientação de um veterinário"
   },
   "Envenenamento": {
     "nome": "Envenenamento",
-    "foto": "assets/images/veneno_dog.jpg",
+    "foto": "assets/images/dogsImages/veneno_dog.jpg",
     "Emergência": "Remover a fonte do veneno.Lavar a boca do animal com água limpa.Tente identificar a substância ingerida, se possível.Levar o animal imediatamente ao veterinário.Se você perceber que seu cão ingeriu uma dose elevada de veneno, deve provocar-lhe o vômito imediatamente. Para tal, dê-lhe várias colheres de água com muito sal",
     "Cuidados adicionais": " Caso o animal esteja acordado e consciente e se o cachorro apresentou sintomas de envenenamento a menos de 2 horas, o carvão ativado pode ser administrado como paliativo enquanto você se dirige ao veterinário."
   },
   "Feridas com suspeita de infecção": {
     "nome": "Feridas com suspeita de infecção",
-    "foto": "assets/images/ferida_dog.jpg",
+    "foto": "assets/images/dogsImages/ferida_dog.jpg",
     "Emergência": "Limpe a ferida: Limpe suavemente a ferida com uma solução salina ou sabão neutro e água morna.Pare o sangramento: Se a ferida estiver sangrando, aplique pressão com um pano limpo ou curativo para ajudar a estancar o sangramento.Proteger a ferida: Cubra a ferida com um curativo limpo para mantê-la protegida de sujeira e detritos.Monitore a ferida: Fique de olho na ferida para detectar quaisquer alterações ou sinais de infecção, como vermelhidão, inchaço ou secreção,e se você notar algum desses sintomas, consulte um veterinário",
     "Cuidados adicionais": "Embora feridas graves ou com sangramento devam ser tratadas por um veterinário, feridas menores podem ser tratadas em casa com os primeiros socorros adequados."
   },
   "Fraturas ou traumas": {
     "nome": "Fraturas ou traumas",
-    "foto": "url_da_foto7.jpg",
-    "Emergência": "Imobilize a área afetada usando uma tala improvisada (uma tábua, revista dobrada) e uma bandagem firme",
-    "Cuidados adicionais": "Transporte o cachorro com cuidado para evitar agravar a lesão"
+    "foto": "assets/images/dogsImages/fratura_dog.jpg",
+    "Emergência": "Fraturas causam muita dor em cães, então antes de transportá-los para um veterinário ou qualquer outro lugar, prepare uma tala para imobilizar a perna fraturada.Um graveto ou um jornal enrolado pode servir como tala.Amarre a tala à perna com a ajuda de gaze.Não tente colocar o membro fraturado de volta no lugar, pois o animal está com muita dor e apenas um veterinário pode realizar a tarefa da melhor maneira para que o cão não sofra tanto",
+    "Cuidados adicionais": "Em casos de cães agressivos, antes de colocar a tala, coloque uma focinheira no animal."
   },
   "Hipertermia (golpe de calor)": {
     "nome": "Hipertermia (golpe de calor)",
-    "foto": "url_da_foto9.jpg",
-    "Emergência": "Leve o cachorro para um local fresco e ventilado",
-    "Cuidados adicionais": "Resfrie-o com água fresca, mas não fria, e umedeça as patas e a barriga"
+    "foto": "assets/images/dogsImages/hipertermia_dog.jpg",
+    "Emergência": "Retire-o do sol e deixe-o em um local fresco e ventilado.Ofereça água fresca em grande quantidade.Dê gelo para o pet.Use toalhas molhadas, tapete gelado ou coloque água sobre o animal para resfriá-lo",
+    "Cuidados adicionais": "Atenção, evite banho gelado, a redução rápida na temperatura corporal poderá provocar um choque térmico, e piorar o quadro do cachorro. Sendo assim, banho com água gelada não é recomendado. É importante levar o animal ao veterinário o mais rápido possível para um tratamento adequado."
   },
   "Hipotermia (exposição ao frio)": {
     "nome": "Hipotermia (exposição ao frio)",
-    "foto": "url_da_foto21.jpg",
-    "Emergência": "Aqueça o cachorro gradualmente com cobertores ou toalhas aquecidas",
-    "Cuidados adicionais": "Use uma bolsa de água quente, mas envolva-a em um pano para evitar queimaduras"
-  },
-  "Ingestão de objetos estranhos": {
-    "nome": "Ingestão de objetos estranhos",
-    "foto": "url_da_foto19.jpg",
-    "Emergência": "Se suspeitar que o cachorro ingeriu algo perigoso, procure assistência veterinária imediatamente",
-    "Cuidados adicionais": ""
+    "foto": "assets/images/dogsImages/hipotermia_dog.jpg",
+    "Emergência": "Secar imediatamente o cachorro: caso o cachorro tenha se molhado pela chuva ou neve, seque-o imediatamente com uma toalha limpa e seca.Aqueça o cachorro: coloque uma garrafa de água quente sobre o abdômen do seu cão, mas lembre-se de enrolar a garrafa para evitar algum tipo de queimadura.Enrole o cão em um cobertor ou casaco.Depois de aquecer o cachorro, leve-o ao veterinário o quanto antes",
+    "Cuidados adicionais": " A umidade somada às baixas temperaturas tende a favorecer o desenvolvimento dos sintomas de hipotermia em cachorros, mantenha-o seco e longe da umidade."
   },
   "Parada respiratória ou cardíaca": {
     "nome": "Parada respiratória ou cardíaca",
-    "foto": "url_da_foto1.jpg",
-    "Emergência": "Realize RCP (ressuscitação cardiopulmonar) adaptada para cachorros. Comprima o tórax com as palmas das mãos em um ritmo de 100-120 compressões por minuto, e intercale com respiração de socorro a cada 2-3 compressões",
-    "Cuidados adicionais": "Procure um veterinário o mais rápido possível"
-  },
-  "Pancadas na cabeça": {
-    "nome": "Pancadas na cabeça",
-    "foto": "url_da_foto25.jpg",
-    "Emergência": "Imobilize o pescoço e a cabeça do cachorro para evitar movimentos bruscos",
-    "Cuidados adicionais": "Leve o cachorro ao veterinário para avaliação neurológica"
+    "foto": "assets/images/dogsImages/paradacardiaca_dog.jpg",
+    "Emergência": "Verifique se o cão está respirando pelo movimento da barriga e se aproximando do focinho para sentir a respiração.Se não sentir sinal de respiração, ouça se o coração está batendo.Se o coração não estiver batendo, inicie a massagem cardíaca.Coloque o cão em uma superfície plana e estenda a cabeça para trás para criar uma via aérea.Abra as mandíbulas para verificar se há obstrução, se existir e não for facilmente removida, tente deslocar o objeto.Acomode suas mãos ao redor do cano da boca do cão para que apenas as narinas fiquem livres.Sopre o ar para dentro das narinas com cinco ou seis respirações rápidas, mais uma vez, dependendo do tamanho do cão",
+    "Cuidados adicionais": "Procure um veterinário o mais rápido possível. Lembre-se de que é importante levar o animal ao veterinário o mais rápido possível para receber tratamento adequado. É importante ressaltar que essas ações só devem ser feitas por um médico veterinário com conhecimento prático do assunto."
   },
   "Picada de cobra venenosa": {
     "nome": "Picada de cobra venenosa",
-    "foto": "url_da_foto20.jpg",
-    "Emergência": "Mantenha o cachorro calmo e imóvel para evitar que o veneno se espalhe mais rápido pelo corpo",
-    "Cuidados adicionais": "Transporte o cachorro com cuidado para uma clínica veterinária o mais rápido possível"
+    "foto": "assets/images/dogsImages/cobra_dog.jpg",
+    "Emergência": "Leve  o cão ao veterinário o mais rápido possível.Mantenha o animal imóvel para evitar que o veneno se espalhe pelo corpo.Não intervenha no ferimento, pois pode aumentar o risco de infecção e piorar o quadro.NUNCA faça torniquete (amarrar um tecido próximo à lesão para evitar a circulação do sangue), pois pode causar necrose e, consequentemente, a amputação do membro",
+    "Cuidados adicionais": "Leve o cão ao veterinário mesmo que você suspeite que a cobra não seja venenosa."
   },
   "Picadas de insetos ou abelhas": {
     "nome": "Picadas de insetos ou abelhas",
-    "foto": "url_da_foto11.jpg",
-    "Emergência": "Remova o ferrão com cuidado, raspando a pele com uma lâmina ou cartão rígido",
-    "Cuidados adicionais": "Aplique gelo envolto em um pano para reduzir o inchaço"
-  },
-  "Problemas respiratórios": {
-    "nome": "Problemas respiratórios",
-    "foto": "url_da_foto15.jpg",
-    "Emergência": "Remova objetos ou obstruções próximas que possam dificultar a respiração",
-    "Cuidados adicionais": "Leve o cachorro para um local calmo e bem ventilado"
-  },
-  "Queimaduras": {
-    "nome": "Queimaduras",
-    "foto": "url_da_foto4.jpg",
-    "Emergência": "Resfrie a área afetada com água fria corrente por alguns minutos",
-    "Cuidados adicionais": "Cubra a queimadura com gaze ou pano limpo"
-  },
-  "Queimaduras por frio (queimaduras de gelo)": {
-    "nome": "Queimaduras por frio (queimaduras de gelo)",
-    "foto": "url_da_foto28.jpg",
-    "Emergência": "Nunca esfregue a área congelada",
-    "Cuidados adicionais": "Aqueça a área afetada com água morna (não quente) e procure o veterinário"
+    "foto": "assets/images/dogsImages/abelha_dog.jpg",
+    "Emergência": "Identifique o inseto que picou o cão e observe a reação do animal.Se você perceber qualquer sinal de anormalidade, leve seu cão imediatamente a um veterinário.Caso a picada tenha sido provocada por uma abelha ou vespa, aplique na região afetada o gel extraído da babosa, pois ele ajuda a controlar a sensação de queimação e a diminuir a dor.Outra dica é usar uma pasta de bicarbonato de sódio e água várias vezes ao dia por cima do ferimento.Qualquer ferrão de abelha incorporado deve ser removido, de preferência com cartão de crédito ou objeto rígido, tomando cuidado para não comprimir ainda mais o saco de veneno.Compressas frias aplicadas no local da picada podem ajudar a aliviar a dor e o inchaço",
+    "Cuidados adicionais": "Lembre-se, é sempre importante consultar um veterinário em caso de dúvida ou preocupação com a saúde do seu animal de estimação. E, se possível, leve o inseto que picou seu cão."
   },
   "Queimaduras químicas": {
     "nome": "Queimaduras químicas",
-    "foto": "url_da_foto12.jpg",
-    "Emergência": "Lave a área afetada com água corrente por pelo menos 10 minutos",
-    "Cuidados adicionais": "Cubra a queimadura com uma gaze limpa e procure assistência veterinária"
-  },
-  "Queimaduras solares": {
-    "nome": "Queimaduras solares",
-    "foto": "url_da_foto17.jpg",
-    "Emergência": "Mantenha o cachorro dentro de casa ou em uma área sombreada",
-    "Cuidados adicionais": "Aplique aloe vera ou uma loção própria para queimaduras leves"
+    "foto": "assets/images/dogsImages/quimica_dog.jpg",
+    "Emergência": "Use luvas de borracha para evitar queimaduras nas mãos, remova coleiras, arreios ou roupas que seu cão estiver usando.Lave a área afetada com água corrente por 20 minutos, tomando cuidado para não espalhar os produtos químicos pelo resto do corpo do animal.Leve-o ao veterinário",
+    "Cuidados adicionais": "Lembre-se de que é importante levar o animal ao veterinário o mais rápido possível para avaliar a gravidade da queimadura e determinar o tratamento adequado. Queimaduras de segundo e terceiro graus em cães podem causar danos profundos e até choque, muitas vezes dias após o incidente. Portanto, é importante agir com rapidez e eficácia para minimizar os danos."
   },
   "Sangramento": {
     "nome": "Sangramento",
-    "foto": "url_da_foto2.jpg",
-    "Emergência": "Pressione firmemente com gaze ou pano limpo sobre a área sangrando",
-    "Cuidados adicionais": "Se possível, eleve a parte afetada para ajudar a controlar o sangramento"
+    "foto": "assets/images/dogsImages/sangramento_dog.jpg",
+    "Emergência": "Em caso de sangramento, pressione a área com um pano limpo para estancar o sangue.Conter o sangramento é importante, para isso, o tutor pode pressionar a região com gaze ou um pano limpo enquanto leva o pet ao veterinário.É importante ressaltar que caso haja algum objeto causando o sangramento, o tutor jamais deve tentar retirar o item.",
+    "Cuidados adicionais": "Se possível, eleve a parte afetada para ajudar a controlar o sangramento enquanto leva o animal ao veterinário."
   }
 }

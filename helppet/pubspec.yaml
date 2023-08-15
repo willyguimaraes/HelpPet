@@ -73,17 +73,40 @@ flutter:
    - assets\images\map_pin.png
    - assets/data/dogs_aid.json
    - assets/data/cats_aid.json
-   - assets/images/alergia_dog.jpg
-   - assets/images/asfixia_dog.jpg
-   - assets/images/atropelamento_dog.jpg
-   - assets/images/choque_dog.jpg
-   - assets/images/convulsao_dog.jpg
-   - assets/images/eplepsia_dog.jpg
-   - assets/images/desmaio_dog.jpg
-   - assets/images/vomito_dog.jpg
-   - assets/images/oftalmo_dog.jpg
-   - assets/images/veneno_dog.jpg
-   - assets/images/ferida_dog.jpg
+   - assets/images/dogsImages/alergia_dog.jpg
+   - assets/images/dogsImages/asfixia_dog.jpg
+   - assets/images/dogsImages/atropelamento_dog.jpg
+   - assets/images/dogsImages/choque_dog.jpg
+   - assets/images/dogsImages/convulsao_dog.jpg
+   - assets/images/dogsImages/eplepsia_dog.jpg
+   - assets/images/dogsImages/desmaio_dog.jpg
+   - assets/images/dogsImages/vomito_dog.jpg
+   - assets/images/dogsImages/oftalmo_dog.jpg
+   - assets/images/dogsImages/veneno_dog.jpg
+   - assets/images/dogsImages/ferida_dog.jpg
+   - assets/images/dogsImages/fratura_dog.jpg
+   - assets/images/dogsImages/hipertermia_dog.jpg
+   - assets/images/dogsImages/hipotermia_dog.jpg
+   - assets/images/dogsImages/paradacardiaca_dog.jpg
+   - assets/images/dogsImages/cobra_dog.jpg
+   - assets/images/dogsImages/abelha_dog.jpg
+   - assets/images/dogsImages/quimica_dog.jpg
+   - assets/images/dogsImages/sangramento_dog.jpg
+   - assets/images/catsImages/atropelamento_cat.jpg
+   - assets/images/catsImages/choque_eletrico_cat.jpg
+   - assets/images/catsImages/corpos_estranhos_olhos_cat.jpg
+   - assets/images/catsImages/engasgamento_cat.jpg
+   - assets/images/catsImages/envenenamento_cat.jpg
+   - assets/images/catsImages/ferimentos_cat.jpg
+   - assets/images/catsImages/fraturas_cat.jpg
+   - assets/images/catsImages/hipotermia_cat.jpg
+   - assets/images/catsImages/insolacao_cat.jpg
+   - assets/images/catsImages/insuficiencia_respiratoria_cat.jpg
+   - assets/images/catsImages/parada_cardiaca_cat.jpg
+   - assets/images/catsImages/picadas_insetos_abelhas_cat.jpg
+   - assets/images/catsImages/queimaduras_cat.jpg
+   - assets/images/catsImages/sangramento_cat.jpg
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
