@@ -33,7 +33,7 @@ class EmergencyPage extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color.fromARGB(198, 255, 255, 255),
         appBar: AppBar(
-          title: Text(titulo),
+          title: Text(titulo, style: const TextStyle(fontFamily: 'Montserrat',),),
           leading: ElevatedButton(
             onPressed: () {
               Navigator.push(
@@ -65,6 +65,7 @@ class EmergencyPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
                         ),
                       ),
                     ),
@@ -75,6 +76,7 @@ class EmergencyPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
                         ),
                       ),
                     ),
@@ -90,6 +92,7 @@ class EmergencyPage extends StatelessWidget {
                                 "${emergencia.split('.').indexOf(item) + 1} - ",
                                 style: TextStyle(
                                   fontSize: 18,
+                                  fontFamily: 'Montserrat',
                                 ),
                               ),
                               Flexible(
@@ -99,6 +102,7 @@ class EmergencyPage extends StatelessWidget {
                                     item.trim(),
                                     style: TextStyle(
                                       fontSize: 20,
+                                      fontFamily: 'Montserrat',
                                     ),
                                   ),
                                 ),
@@ -115,6 +119,7 @@ class EmergencyPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
                         ),
                       ),
                     ),
@@ -124,6 +129,7 @@ class EmergencyPage extends StatelessWidget {
                         adicionais,
                         style: TextStyle(
                           fontSize: 20,
+                          fontFamily: 'Montserrat',
                         ),
                       ),
                     ),

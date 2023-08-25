@@ -36,6 +36,7 @@ class VetButton extends StatelessWidget {
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).colorScheme.secondary,
+                fontFamily: 'Montserrat',
               ),
             ),
           ],

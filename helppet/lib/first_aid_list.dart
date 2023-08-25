@@ -86,7 +86,7 @@ class _EmergencyListPageState extends State<EmergencyListPage> {
           },
           child: const Icon(Icons.arrow_back_sharp),
         ),
-        title: Text(titles),
+        title: Text(titles, style: const TextStyle(fontFamily: 'Montserrat',),),
       ),
       body: ListView.builder(
         itemCount: emergencyNames.length,
@@ -125,6 +125,7 @@ class _EmergencyListPageState extends State<EmergencyListPage> {
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.secondary,
+                    fontFamily: 'Montserrat',
                   ),
                 )),
               ),

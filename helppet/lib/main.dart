@@ -6,8 +6,8 @@ import 'first_aid_list.dart';
 
 void main() {
   runApp(
-   MaterialApp(
-    home: Helppet(),
+    MaterialApp(
+      home: Helppet(),
     ),
   );
 }
@@ -19,61 +19,75 @@ class Helppet extends StatelessWidget {
     return MaterialApp(
       theme: tema.copyWith(
         colorScheme: tema.colorScheme.copyWith(
-          primary: Color.fromRGBO(91, 154, 139, 1.0),
-          secondary: Color.fromARGB(255, 0, 0, 0),
-          
+          primary: const Color.fromRGBO(91, 154, 139, 1.0),
+          secondary: const Color.fromARGB(255, 0, 0, 0),
+        ),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(fontFamily: 'Montserrat'),
         ),
       ),
       home: Scaffold(
-        backgroundColor:Color.fromRGBO(37, 43, 72, 1.0),
+        backgroundColor: const Color.fromRGBO(37, 43, 72, 1),
         appBar: AppBar(
           leadingWidth: MediaQuery.of(context).size.width * 0.6,
-          leading: Image.asset(
-            'assets/images/logo.png',
-            fit: BoxFit.cover,
-          ),
-          
+          leading: Image.asset('assets/images/logo.png',
+              fit: BoxFit.cover, alignment: Alignment.centerLeft),
         ),
-        
         body: Container(
-          //color:  Color.fromRGBO(31, 40, 51, 1.0),
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/background_main.jpg"),
+                  fit: BoxFit.cover)),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const SizedBox(height: 20),
-                const Text(
-                  'Selecione o pet:',
-                  style: TextStyle(fontSize: 34,
-                  color: Colors.white),
-                ),
-                
-                Column(
-                  children: [
-                    PetButton(
-                      imagePath: 'assets/images/pet1.png',
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: ((context) => const Aidlist(pet: 'dog',))));
-                      },
-                      buttonText: 'Cães',
+                Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromRGBO(
+                        37, 43, 72, 1), // Cor do fundo
+                    borderRadius:
+                        BorderRadius.circular(10), // Bordas arredondadas
+                  ),
+                  padding: const EdgeInsets.all(20), // Espaçamento interno
+                  child: const Text(
+                    'Selecione o pet:',
+                    style: TextStyle(
+                      fontSize: 34,
+                      color: Colors.white,
+                      fontFamily: 'Montserrat',
                     ),
-                    const SizedBox(height: 20),
-                    PetButton(
-                      imagePath: 'assets/images/pet2.png',
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: ((context) => const Aidlist(pet: 'cat',))));
-                      },
-                      buttonText: 'Gatos',
-                    ),
-                  ],
+                  ),
                 ),
-                // ...
-        
+                Column(children: [
+                  PetButton(
+                    imagePath: 'assets/images/pet1.png',
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) =>
+                                  const Aidlist(pet: 'dog'))));
+                    },
+                    buttonText: 'Cães',
+                    
+
+                  ),
+                  const SizedBox(height: 20),
+                  PetButton(
+                    imagePath: 'assets/images/pet2.png',
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) =>
+                                  const Aidlist(pet: 'cat'))));
+                    },
+                    buttonText: 'Gatos',
+                  ),
+                ]),
                 const SizedBox(height: 20),
-        
-                // Botão para pesquisar veterinários próximos no Google Maps
                 VetButton(
                   buttonText: 'Encontrar Veterinários',
                   onPressed: () {

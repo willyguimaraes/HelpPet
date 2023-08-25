@@ -36,6 +36,7 @@ class PetButton extends StatelessWidget {
                 style: TextStyle(fontSize: 26,
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).colorScheme.secondary,
+                  fontFamily: 'Montserrat',
                  ),
               ),
             ),
