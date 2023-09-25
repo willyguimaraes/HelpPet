@@ -41,6 +41,10 @@ dependencies:
   map_launcher: ^2.5.0+1
   http: ^1.1.0
   flutter_launcher_icons: ^0.13.1
+  path_provider: ^2.0.6
+  fluttertoast: ^8.0.8
+  image_picker: ^1.0.4
+  intl: ^0.18.1
 
 
 dev_dependencies:
@@ -107,6 +111,8 @@ flutter:
    - assets/images/catsImages/queimaduras_cat.jpg
    - assets/images/catsImages/sangramento_cat.jpg
    - assets/images/background_main.jpg
+   - assets/images/addpet.png
+   - assets/images/listpet.png
 
   #   - images/a_dot_ham.jpeg
 
