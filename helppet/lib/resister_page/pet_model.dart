@@ -12,9 +12,6 @@ class Pet {
   List<Medicamento> historicoMedicamentos;
   List<DoencaLesao> historicoDoencasLesoes;
   List<ExameProcedimento> historicoExamesProcedimentos;
-  String tipoAlimentacao;
-  double quantidadeAlimentacao;
-  String comportamento;
   List<Consulta> agendaConsultas;
 
   Pet({
@@ -31,9 +28,6 @@ class Pet {
     this.historicoMedicamentos = const [],
     this.historicoDoencasLesoes = const [],
     this.historicoExamesProcedimentos = const [],
-    required this.tipoAlimentacao,
-    required this.quantidadeAlimentacao,
-    required this.comportamento,
     this.agendaConsultas = const [],
   });
 }

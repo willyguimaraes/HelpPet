@@ -3,6 +3,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'dart:io';
 
+import 'pet_model.dart';
+
 void main() {
   final ThemeData tema = ThemeData();
   runApp(
@@ -14,7 +16,7 @@ void main() {
           background: Color.fromRGBO(37, 43, 72, 1.0),
         ),
       ),
-      home: PetFormPage(),
+      home: MyPageView(),
     ),
   );
 }
@@ -22,20 +24,42 @@ void main() {
 const TextStyle customTextStyle = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.bold,
-  color: Colors.black, // Altere a cor conforme necessário
+  color: Colors.black,
   fontFamily: 'Montserrat',
 );
+
+class MyPageView extends StatelessWidget {
+  final PageController controller = PageController(initialPage: 0);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cadastro de Pet', style: customTextStyle),
+      ),
+      body: PageView(
+        controller: controller,
+        children: <Widget>[
+          PetFormPage(),
+        ],
+      ),
+    );
+  }
+}
 
 class PetFormPage extends StatefulWidget {
   @override
   _PetFormPageState createState() => _PetFormPageState();
 }
 
-class _PetFormPageState extends State<PetFormPage> {
+class _PetFormPageState extends State<PetFormPage>
+    with AutomaticKeepAliveClientMixin<PetFormPage> {
   final _formKey = GlobalKey<FormState>();
 
-  // Variáveis para armazenar os dados do formulário
-  Image? _pickedImage;
+  @override
+  bool get wantKeepAlive => true;
+
+  File? _pickedImage;
   String nome = "";
   String especie = "";
   String raca = "";
@@ -45,14 +69,8 @@ class _PetFormPageState extends State<PetFormPage> {
   String proprietarioEndereco = "";
   String proprietarioTelefone = "";
   String proprietarioEmail = "";
-  String tipoAlimentacao = "";
-  double quantidadeAlimentacao = 0.0;
-  String comportamento = "";
-
-  // Variável para armazenar a data selecionada
   DateTime? selectedDate;
 
-  // Função para exibir o seletor de data
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = (await showDatePicker(
       context: context,
@@ -60,7 +78,7 @@ class _PetFormPageState extends State<PetFormPage> {
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
     ))!;
-    if (picked != null && picked != selectedDate)
+    if (picked != selectedDate)
       setState(() {
         selectedDate = picked;
         dataNascimento = DateFormat('dd/MM/yyyy').format(selectedDate!);
@@ -73,446 +91,360 @@ class _PetFormPageState extends State<PetFormPage> {
 
     if (pickedImage != null) {
       setState(() {
-        _pickedImage = Image.file(File(pickedImage.path));
+        _pickedImage = File(pickedImage.path);
       });
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Cadastro de Pet',
-          style: customTextStyle,
-        ),
-      ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
-          child: ListView(
-            children: <Widget>[
-              // Espaço inicial
-              SizedBox(height: 8.0),
-
-              // Imagem do pet
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: ListTile(
-                  leading: Icon(Icons.image),
-                  title: Text(
-                    'Imagem do pet',
-                    style: customTextStyle,
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
                   ),
-                  subtitle: _pickedImage == null
-                      ? Text(
-                          'Nenhuma imagem selecionada',
-                          style: TextStyle(fontFamily: 'Montserrat'),
-                        )
-                      : _pickedImage!,
-                  onTap: () => _getImage(),
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Nome do Pet
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration: InputDecoration(labelText: 'Nome do Pet'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    nome = value!;
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Especie
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Checkbox(
-                      value: especie == 'Gato',
-                      onChanged: (bool? value) {
-                        setState(() {
-                          if (value != null && value) {
-                            especie = 'Gato';
-                          } else {
-                            especie = 'Cachorro';
-                          }
-                        });
-                      },
-                    ),
-                    Text(
-                      'Gato',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Checkbox(
-                      value: especie == 'Cachorro',
-                      onChanged: (bool? value) {
-                        setState(() {
-                          if (value != null && value) {
-                            especie = 'Cachorro';
-                          } else {
-                            especie = 'Gato';
-                          }
-                        });
-                      },
-                    ),
-                    Text(
-                      'Cachorro',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Raça
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration: InputDecoration(labelText: 'Raça'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    raca = value!;
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Cor
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration: InputDecoration(labelText: 'Cor'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    cor = value!;
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Data de Nascimento
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: ListTile(
-                  leading: Icon(Icons.calendar_today),
-                  title: Text(
-                    'Data de Nascimento',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  subtitle: Text(
-                    selectedDate == null
-                        ? 'Selecione a data'
-                        : DateFormat('dd/MM/yyyy').format(selectedDate!),
-                    style: TextStyle(fontFamily: 'Montserrat'),
-                  ),
-                  onTap: () => _selectDate(context),
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Nome do Proprietário
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration:
-                      InputDecoration(labelText: 'Nome do proprietário'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    proprietarioNome = value!;
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Endereço do Proprietário
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration:
-                      InputDecoration(labelText: 'Endereço do proprietário'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    proprietarioEndereco = value!;
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Email do Proprietário
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration:
-                      InputDecoration(labelText: 'Email do Proprietário'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    proprietarioEmail = value!;
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Telefone do Proprietário
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration:
-                      InputDecoration(labelText: 'Telefone do proprietário'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    proprietarioTelefone = value!;
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Tipo de Alimentação
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration: InputDecoration(labelText: 'Tipo de alimentação'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    tipoAlimentacao = value!;
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Quantidade da Alimentação
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration:
-                      InputDecoration(labelText: 'Quantidade da alimentação'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    try {
-                      double doubleValue = double.parse(value);
-                      return null;
-                    } catch (e) {
-                      return 'Digite um número válido';
-                    }
-                  },
-                  onSaved: (value) {
-                    quantidadeAlimentacao = double.parse(value!);
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Comportamento
-              Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-                child: TextFormField(
-                  style: customTextStyle,
-                  decoration: InputDecoration(labelText: 'Comportamento'),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Campo obrigatório';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    comportamento = value!;
-                  },
-                ),
-              ),
-
-              // Espaço entre os elementos
-              SizedBox(height: 8.0),
-
-              // Botão de cadastro
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.save();
-                    // Aqui você pode enviar os dados do formulário para onde desejar
-                    // Por exemplo, você pode criar uma instância da classe Pet e armazenar os dados nela.
-                    // Depois, pode exibir ou salvar esses dados conforme necessário.
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-                child: ListTile(
+                  child: ListTile(
                     title: Text(
-                  'Cadastrar Pet',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.secondary,
-                    fontFamily: 'Montserrat',
+                      'Imagem do pet',
+                      style: customTextStyle,
+                    ),
+                    subtitle: _pickedImage == null
+                        ? Text(
+                            'Nenhuma imagem selecionada',
+                            style: TextStyle(fontFamily: 'Montserrat'),
+                          )
+                        : Container(
+                            width: 300.0,
+                            height: 300.0,
+                            child: Image.file(
+                              _pickedImage!,
+                              fit: BoxFit
+                                  .cover, // Para fazer a imagem ocupar todo o container
+                            ),
+                          ),
+                    trailing: _pickedImage == null
+                        ? const Icon(Icons.add_a_photo_outlined)
+                        : null,
+                    onTap: () => _getImage(),
                   ),
-                )),
-              ),
+                ),
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  child: TextFormField(
+                    style: customTextStyle,
+                    decoration: InputDecoration(
+                      labelText: 'Nome do Pet',
+                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
+                          (states) => customTextStyle),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Campo obrigatório';
+                      }
+                      return null;
+                    },
+                    // onSaved: (value) {
+                    //   nome = value!;
+                    //  },
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Checkbox(
+                        value: especie == 'Gato',
+                        onChanged: (bool? value) {
+                          setState(() {
+                            if (value != null && value) {
+                              especie = 'Gato';
+                            } else {
+                              especie = 'Cachorro';
+                            }
+                          });
+                        },
+                      ),
+                      Text(
+                        'Gato',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Checkbox(
+                        value: especie == 'Cachorro',
+                        onChanged: (bool? value) {
+                          setState(() {
+                            if (value != null && value) {
+                              especie = 'Cachorro';
+                            } else {
+                              especie = 'Gato';
+                            }
+                          });
+                        },
+                      ),
+                      Text(
+                        'Cachorro',
+                        style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  child: TextFormField(
+                    style: customTextStyle,
+                    decoration: InputDecoration(
+                      labelText: 'Raça',
+                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
+                          (states) => customTextStyle),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Campo obrigatório';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      raca = value!;
+                    },
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  child: TextFormField(
+                    style: customTextStyle,
+                    decoration: InputDecoration(
+                      labelText: 'Cor',
+                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
+                          (states) => customTextStyle),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Campo obrigatório';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      cor = value!;
+                    },
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  child: ListTile(
+                    leading: Icon(Icons.calendar_today),
+                    title: Text(
+                      'Data de Nascimento',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      selectedDate == null
+                          ? 'Selecione a data'
+                          : DateFormat('dd/MM/yyyy').format(selectedDate!),
+                      style: TextStyle(fontFamily: 'Montserrat'),
+                    ),
+                    onTap: () => _selectDate(context),
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  child: TextFormField(
+                    style: customTextStyle,
+                    decoration: InputDecoration(
+                      labelText: 'Nome do proprietário',
+                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
+                          (states) => customTextStyle),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Campo obrigatório';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      proprietarioNome = value!;
+                    },
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  child: TextFormField(
+                    style: customTextStyle,
+                    decoration: InputDecoration(
+                      labelText: 'Endereço do proprietário',
+                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
+                          (states) => customTextStyle),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Campo obrigatório';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      proprietarioEndereco = value!;
+                    },
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  child: TextFormField(
+                    style: customTextStyle,
+                    decoration: InputDecoration(
+                      labelText: 'Email do Proprietário',
+                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
+                          (states) => customTextStyle),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Campo obrigatório';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      proprietarioEmail = value!;
+                    },
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                Container(
+                  margin: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  child: TextFormField(
+                    style: customTextStyle,
+                    decoration: InputDecoration(
+                      labelText: 'Telefone do proprietário',
+                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
+                          (states) => customTextStyle),
+                    ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Campo obrigatório';
+                      }
+                      return null;
+                    },
+                    onSaved: (value) {
+                      proprietarioTelefone = value!;
+                    },
+                  ),
+                ),
+                SizedBox(height: 8.0),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
 
-              // Espaço final
-              SizedBox(height: 8.0),
-            ],
+                      Pet novoPet = Pet(
+                        nome: nome,
+                        especie: especie,
+                        raca: raca,
+                        cor: cor,
+                        dataNascimento: dataNascimento,
+                        proprietarioNome: proprietarioNome,
+                        proprietarioEndereco: proprietarioEndereco,
+                        proprietarioTelefone: proprietarioTelefone,
+                      );
+
+                      print("Pet salvo");
+                      print(novoPet.toString());
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
+                  child: ListTile(
+                    title: Text(
+                      'Cadastrar Pet',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.secondary,
+                        fontFamily: 'Montserrat',
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 8.0),
+              ],
+            ),
           ),
         ),
       ),
