@@ -6,12 +6,12 @@ import 'Pet_form.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: Helppet(),
+      home: Helppetcadastro(),
     ),
   );
 }
 
-class Helppet extends StatelessWidget {
+class Helppetcadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData tema = ThemeData();
@@ -50,7 +50,7 @@ class Helppet extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: ((context) =>
-                                  PetFormPage())));
+                                  const PetForm())));
                     },
                     buttonText: '  Cadastrar pet',
                     

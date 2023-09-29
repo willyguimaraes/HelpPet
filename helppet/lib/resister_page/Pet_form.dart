@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:helppet/resister_page/register_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'dart:io';
-
 import 'pet_model.dart';
 
 void main() {
-  final ThemeData tema = ThemeData();
   runApp(
-    MaterialApp(
+    const MaterialApp(
+      home: PetForm(),
+    ),
+  );
+}
+
+class PetForm extends StatelessWidget {
+  const PetForm({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData tema = ThemeData();
+    return MaterialApp(
       theme: tema.copyWith(
         colorScheme: tema.colorScheme.copyWith(
           primary: Color.fromRGBO(91, 154, 139, 1.0),
@@ -16,9 +27,9 @@ void main() {
           background: Color.fromRGBO(37, 43, 72, 1.0),
         ),
       ),
-      home: MyPageView(),
-    ),
-  );
+      home: PetFormPage(),
+    );
+  }
 }
 
 const TextStyle customTextStyle = TextStyle(
@@ -28,26 +39,8 @@ const TextStyle customTextStyle = TextStyle(
   fontFamily: 'Montserrat',
 );
 
-class MyPageView extends StatelessWidget {
-  final PageController controller = PageController(initialPage: 0);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Cadastro de Pet', style: customTextStyle),
-      ),
-      body: PageView(
-        controller: controller,
-        children: <Widget>[
-          PetFormPage(),
-        ],
-      ),
-    );
-  }
-}
-
 class PetFormPage extends StatefulWidget {
+  const PetFormPage({super.key});
   @override
   _PetFormPageState createState() => _PetFormPageState();
 }
@@ -55,10 +48,8 @@ class PetFormPage extends StatefulWidget {
 class _PetFormPageState extends State<PetFormPage>
     with AutomaticKeepAliveClientMixin<PetFormPage> {
   final _formKey = GlobalKey<FormState>();
-
   @override
   bool get wantKeepAlive => true;
-
   File? _pickedImage;
   String nome = "";
   String especie = "";
@@ -70,7 +61,6 @@ class _PetFormPageState extends State<PetFormPage>
   String proprietarioTelefone = "";
   String proprietarioEmail = "";
   DateTime? selectedDate;
-
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = (await showDatePicker(
       context: context,
@@ -88,7 +78,6 @@ class _PetFormPageState extends State<PetFormPage>
   Future<void> _getImage() async {
     final picker = ImagePicker();
     final pickedImage = await picker.pickImage(source: ImageSource.gallery);
-
     if (pickedImage != null) {
       setState(() {
         _pickedImage = File(pickedImage.path);
@@ -100,6 +89,24 @@ class _PetFormPageState extends State<PetFormPage>
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
+      appBar: AppBar(
+        leading: ElevatedButton(
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => Helppetcadastro())));
+          },
+          child: const Icon(Icons.arrow_back_sharp),
+        ),
+        title: const Text(
+          "Cadastrar Pet",
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+      ),
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -162,9 +169,9 @@ class _PetFormPageState extends State<PetFormPage>
                       }
                       return null;
                     },
-                    // onSaved: (value) {
-                    //   nome = value!;
-                    //  },
+                    onSaved: (value) {
+                      nome = value!;
+                    },
                   ),
                 ),
                 SizedBox(height: 8.0),
@@ -419,9 +426,6 @@ class _PetFormPageState extends State<PetFormPage>
                         proprietarioEndereco: proprietarioEndereco,
                         proprietarioTelefone: proprietarioTelefone,
                       );
-
-                      print("Pet salvo");
-                      print(novoPet.toString());
                     }
                   },
                   style: ElevatedButton.styleFrom(
