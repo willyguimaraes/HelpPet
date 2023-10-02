@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../components/pet_buttons.dart';
+import '../main.dart';
 import 'Pet_form.dart';
 
 void main() {
@@ -28,9 +29,23 @@ class Helppetcadastro extends StatelessWidget {
       home: Scaffold(
         backgroundColor: const Color.fromRGBO(37, 43, 72, 1),
         appBar: AppBar(
-          leadingWidth: MediaQuery.of(context).size.width * 0.6,
-          leading: Image.asset('assets/images/logo.png',
-              fit: BoxFit.cover, alignment: Alignment.centerLeft),
+          //leadingWidth: MediaQuery.of(context).size.width * 0.6,
+          leading: ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => Helppet())));
+            },
+            child: const Icon(Icons.arrow_back_sharp),
+          ),
+          title: const Text(
+            "Meus Pets",
+            style: TextStyle(
+              
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontFamily: 'Montserrat',
+            ),
+          ),
         ),
         body: Container(
           decoration: const BoxDecoration(
@@ -49,11 +64,9 @@ class Helppetcadastro extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: ((context) =>
-                                  const PetForm())));
+                              builder: ((context) => const PetForm())));
                     },
                     buttonText: '  Cadastrar pet',
-                    
                   ),
                   const SizedBox(height: 20),
                   PetButton(
@@ -62,8 +75,7 @@ class Helppetcadastro extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: ((context) =>
-                                  PetFormPage())));
+                              builder: ((context) => PetFormPage())));
                     },
                     buttonText: '  Listar pets',
                   ),

@@ -143,7 +143,7 @@ class EmergencyPage extends StatelessWidget {
                 buttonText: 'Encontrar Veterinários',
                 onPressed: () {
                   openMapsForVeterinarians();
-                },
+                }, image: 'assets/images/map_pin.png',
               ),
             )
           ],

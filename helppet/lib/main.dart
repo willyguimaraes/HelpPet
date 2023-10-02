@@ -3,6 +3,7 @@ import 'components/map_utils.dart';
 import 'components/pet_buttons.dart';
 import 'components/vet_Button.dart';
 import 'first_aid_list.dart';
+import 'resister_page/register_main.dart';
 
 void main() {
   runApp(
@@ -45,8 +46,7 @@ class Helppet extends StatelessWidget {
                 const SizedBox(height: 20),
                 Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromRGBO(
-                        37, 43, 72, 1), // Cor do fundo
+                    color: const Color.fromRGBO(37, 43, 72, 1), // Cor do fundo
                     borderRadius:
                         BorderRadius.circular(10), // Bordas arredondadas
                   ),
@@ -71,8 +71,6 @@ class Helppet extends StatelessWidget {
                                   const Aidlist(pet: 'dog'))));
                     },
                     buttonText: 'Cães',
-                    
-
                   ),
                   const SizedBox(height: 20),
                   PetButton(
@@ -87,12 +85,29 @@ class Helppet extends StatelessWidget {
                     buttonText: 'Gatos',
                   ),
                 ]),
-                const SizedBox(height: 20),
-                VetButton(
-                  buttonText: 'Encontrar Veterinários',
-                  onPressed: () {
-                    openMapsForVeterinarians();
-                  },
+                const SizedBox(height: 10),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    VetButton(
+                      buttonText: 'Meus Pets',
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => Helppetcadastro())));
+                      },
+                      image: 'assets/images/pawprint.png',
+                    ),
+                    const SizedBox(height: 10),
+                    VetButton(
+                      buttonText: 'Encontrar Veterinários',
+                      onPressed: () {
+                        openMapsForVeterinarians();
+                      },
+                      image: 'assets/images/map_pin.png',
+                    ),
+                  ],
                 ),
               ],
             ),
