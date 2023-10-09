@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../components/pet_buttons.dart';
 import '../main.dart';
-import 'Pet_form.dart';
+import 'pet_form.dart';
+import 'pets_list.dart';
 
 void main() {
   runApp(
@@ -75,7 +76,7 @@ class Helppetcadastro extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: ((context) => PetFormPage())));
+                              builder: ((context) => ListaPetsPage())));
                     },
                     buttonText: '  Listar pets',
                   ),

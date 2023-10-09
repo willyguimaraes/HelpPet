@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:helppet/resister_page/register_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:path_provider/path_provider.dart';
 import 'dart:io';
+import '../database/petDao.dart';
 import 'pet_model.dart';
 
 void main() {
@@ -50,6 +52,7 @@ class _PetFormPageState extends State<PetFormPage>
   final _formKey = GlobalKey<FormState>();
   @override
   bool get wantKeepAlive => true;
+  String imagem = "";
   File? _pickedImage;
   String nome = "";
   String especie = "";
@@ -57,10 +60,9 @@ class _PetFormPageState extends State<PetFormPage>
   String cor = "";
   String dataNascimento = "";
   String proprietarioNome = "";
-  String proprietarioEndereco = "";
-  String proprietarioTelefone = "";
-  String proprietarioEmail = "";
   DateTime? selectedDate;
+
+
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = (await showDatePicker(
       context: context,
@@ -75,6 +77,22 @@ class _PetFormPageState extends State<PetFormPage>
       });
   }
 
+  Future<String> saveImageToFileSystem(File? imageFile) async {
+  if (imageFile == null) {
+    return '';
+  }
+
+  final directory = await getApplicationDocumentsDirectory();
+  final imagePath = '${directory.path}/pet_images/${DateTime.now().millisecondsSinceEpoch}.png';
+
+  await Directory('${directory.path}/pet_images').create(recursive: true);
+  await imageFile.copy(imagePath);
+
+  return imagePath;
+}
+
+  
+
   Future<void> _getImage() async {
     final picker = ImagePicker();
     final pickedImage = await picker.pickImage(source: ImageSource.gallery);
@@ -83,7 +101,10 @@ class _PetFormPageState extends State<PetFormPage>
         _pickedImage = File(pickedImage.path);
       });
     }
+    imagem = await saveImageToFileSystem(_pickedImage);
   }
+
+  final _petDao = PetDao();
 
   @override
   Widget build(BuildContext context) {
@@ -333,99 +354,22 @@ class _PetFormPageState extends State<PetFormPage>
                   ),
                 ),
                 SizedBox(height: 8.0),
-                Container(
-                  margin: EdgeInsets.all(8.0),
-                  padding: EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                  child: TextFormField(
-                    style: customTextStyle,
-                    decoration: InputDecoration(
-                      labelText: 'Endereço do proprietário',
-                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
-                          (states) => customTextStyle),
-                    ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Campo obrigatório';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      proprietarioEndereco = value!;
-                    },
-                  ),
-                ),
-                SizedBox(height: 8.0),
-                Container(
-                  margin: EdgeInsets.all(8.0),
-                  padding: EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                  child: TextFormField(
-                    style: customTextStyle,
-                    decoration: InputDecoration(
-                      labelText: 'Email do Proprietário',
-                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
-                          (states) => customTextStyle),
-                    ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Campo obrigatório';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      proprietarioEmail = value!;
-                    },
-                  ),
-                ),
-                SizedBox(height: 8.0),
-                Container(
-                  margin: EdgeInsets.all(8.0),
-                  padding: EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                  child: TextFormField(
-                    style: customTextStyle,
-                    decoration: InputDecoration(
-                      labelText: 'Telefone do proprietário',
-                      floatingLabelStyle: MaterialStateTextStyle.resolveWith(
-                          (states) => customTextStyle),
-                    ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Campo obrigatório';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      proprietarioTelefone = value!;
-                    },
-                  ),
-                ),
-                SizedBox(height: 8.0),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
 
                       Pet novoPet = Pet(
+                        imagem: imagem,
                         nome: nome,
                         especie: especie,
                         raca: raca,
                         cor: cor,
                         dataNascimento: dataNascimento,
                         proprietarioNome: proprietarioNome,
-                        proprietarioEndereco: proprietarioEndereco,
-                        proprietarioTelefone: proprietarioTelefone,
                       );
+
+                      await _petDao.insertPet(novoPet);
                     }
                   },
                   style: ElevatedButton.styleFrom(
