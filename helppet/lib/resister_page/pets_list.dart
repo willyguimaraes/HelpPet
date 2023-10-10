@@ -3,6 +3,7 @@ import 'dart:io';
 
 import '../resister_page/pet_model.dart';
 import '../database/petDao.dart';
+import 'register_main.dart';
 
 class ListaPetsPage extends StatefulWidget {
   @override
@@ -28,11 +29,37 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Lista de Pets'),
+    final ThemeData tema = ThemeData();
+    return MaterialApp(
+      theme: tema.copyWith(
+        colorScheme: tema.colorScheme.copyWith(
+          primary: const Color.fromRGBO(91, 154, 139, 1.0),
+          secondary: const Color.fromARGB(255, 0, 0, 0),
+        ),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(fontFamily: 'Montserrat'),
+        ),
       ),
-      body: _buildListaPets(),
+      home: Scaffold(
+        appBar: AppBar(
+            leading: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => Helppetcadastro())));
+              },
+              child: const Icon(Icons.arrow_back_sharp),
+            ),
+            title: const Text(
+              'Meus Pets',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontFamily: 'Montserrat'),
+            )),
+        body: _buildListaPets(),
+      ),
     );
   }
 
@@ -42,28 +69,65 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
         child: Text('Nenhum Pet cadastrado.'),
       );
     } else {
-      return ListView.builder(
-        itemCount: _listaPets.length,
-        itemBuilder: (context, index) {
-          Pet pet = _listaPets[index];
-          return ListTile(
-            title: Text(pet.nome),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Espécie: ${pet.especie}, Raça: ${pet.raca}'),
-                // Adicione um widget Image.file para exibir a imagem do pet
-                if (pet.imagem.isNotEmpty)
-                  Image.file(
-                    File(pet.imagem),
-                    width: 50, // Ajuste conforme necessário
-                    height: 50, // Ajuste conforme necessário
-                    fit: BoxFit.cover,
+      return Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/background_main.jpg"),
+                fit: BoxFit.cover)),
+        child: ListView.builder(
+          itemCount: _listaPets.length,
+          itemBuilder: (context, index) {
+            Pet pet = _listaPets[index];
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-              ],
-            ),
-          );
-        },
+                  padding: EdgeInsets.all(5.0),
+                ),
+                onPressed: () {},
+                child: Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      if (pet.imagem.isNotEmpty)
+                        Image.file(
+                          File(pet.imagem),
+                          width: 50, // Ajuste conforme necessário
+                          height: 50, // Ajuste conforme necessário
+                          fit: BoxFit.cover,
+                        ),
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              pet.nome,
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontFamily: 'Montserrat'),
+                            ),
+                            Text(
+                              'Espécie: ${pet.especie}, Raça: ${pet.raca}',
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: 'Montserrat'),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
       );
     }
   }

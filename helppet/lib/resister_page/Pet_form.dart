@@ -62,7 +62,6 @@ class _PetFormPageState extends State<PetFormPage>
   String proprietarioNome = "";
   DateTime? selectedDate;
 
-
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = (await showDatePicker(
       context: context,
@@ -78,20 +77,19 @@ class _PetFormPageState extends State<PetFormPage>
   }
 
   Future<String> saveImageToFileSystem(File? imageFile) async {
-  if (imageFile == null) {
-    return '';
+    if (imageFile == null) {
+      return '';
+    }
+
+    final directory = await getApplicationDocumentsDirectory();
+    final imagePath =
+        '${directory.path}/pet_images/${DateTime.now().millisecondsSinceEpoch}.png';
+
+    await Directory('${directory.path}/pet_images').create(recursive: true);
+    await imageFile.copy(imagePath);
+
+    return imagePath;
   }
-
-  final directory = await getApplicationDocumentsDirectory();
-  final imagePath = '${directory.path}/pet_images/${DateTime.now().millisecondsSinceEpoch}.png';
-
-  await Directory('${directory.path}/pet_images').create(recursive: true);
-  await imageFile.copy(imagePath);
-
-  return imagePath;
-}
-
-  
 
   Future<void> _getImage() async {
     final picker = ImagePicker();
@@ -310,7 +308,7 @@ class _PetFormPageState extends State<PetFormPage>
                   ),
                   child: ListTile(
                     leading: Icon(Icons.calendar_today),
-                    title: Text(
+                    title: const Text(
                       'Data de Nascimento',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
@@ -370,6 +368,59 @@ class _PetFormPageState extends State<PetFormPage>
                       );
 
                       await _petDao.insertPet(novoPet);
+
+                      // ignore: use_build_context_synchronously
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: AlertDialog(
+                              backgroundColor:
+                                  Theme.of(context).colorScheme.primary,
+                              title: const Text(
+                                'Cadastro realizado',
+                                style: customTextStyle,
+                                textAlign: TextAlign.center,
+                              ),
+                              content: Text(
+                                "$nome cadastrado(a) com sucesso!",
+                                style: customTextStyle,
+                                textAlign: TextAlign.center,
+                              ),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Theme.of(context)
+                                        .colorScheme
+                                        .background,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: ((context) =>
+                                                Helppetcadastro())));
+                                  },
+                                  child: const Text(
+                                    'OK',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontFamily: 'Montserrat',
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
                     }
                   },
                   style: ElevatedButton.styleFrom(
