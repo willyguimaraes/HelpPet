@@ -10,8 +10,8 @@ class PetButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 350, // Largura ajustável conforme necessário
-      height: 150, // Altura ajustável conforme necessário
+      width: 350, 
+      height: 150, 
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(

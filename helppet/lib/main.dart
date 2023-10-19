@@ -7,13 +7,15 @@ import 'resister_page/register_main.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Helppet(),
     ),
   );
 }
 
 class Helppet extends StatelessWidget {
+  const Helppet({super.key});
+
   @override
   Widget build(BuildContext context) {
     final ThemeData tema = ThemeData();
@@ -48,9 +50,9 @@ class Helppet extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(37, 43, 72, 1), // Cor do fundo
                     borderRadius:
-                        BorderRadius.circular(10), // Bordas arredondadas
+                        BorderRadius.circular(10), 
                   ),
-                  padding: const EdgeInsets.all(20), // Espaçamento interno
+                  padding: const EdgeInsets.all(20), 
                   child: const Text(
                     'Selecione o pet:',
                     style: TextStyle(

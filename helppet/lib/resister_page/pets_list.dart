@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
 
-import '../resister_page/pet_model.dart';
+import 'package:helppet/resister_page/pet_model.dart';
 import '../database/petDao.dart';
+import '../pet_monitoring/pet_details.dart';
 import 'register_main.dart';
 
 class ListaPetsPage extends StatefulWidget {
@@ -12,7 +13,7 @@ class ListaPetsPage extends StatefulWidget {
 
 class _ListaPetsPageState extends State<ListaPetsPage> {
   final _petDao = PetDao();
-  List<Pet> _listaPets = [];
+  Map<int, Pet> _listaPets = {};
 
   @override
   void initState() {
@@ -21,7 +22,7 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
   }
 
   Future<void> _carregarPetsDoBanco() async {
-    List<Pet> listaPets = await _petDao.getAllPets();
+    Map<int, Pet> listaPets = await _petDao.getAllPets();
     setState(() {
       _listaPets = listaPets;
     });
@@ -47,7 +48,7 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: ((context) => Helppetcadastro())));
+                        builder: ((context) => const Helppetcadastro())));
               },
               child: const Icon(Icons.arrow_back_sharp),
             ),
@@ -65,8 +66,15 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
 
   Widget _buildListaPets() {
     if (_listaPets.isEmpty) {
-      return Center(
-        child: Text('Nenhum Pet cadastrado.'),
+      return const Center(
+        child: Text(
+          'Nenhum Pet cadastrado.',
+          style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontFamily: 'Montserrat'),
+        ),
       );
     } else {
       return Container(
@@ -77,7 +85,8 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
         child: ListView.builder(
           itemCount: _listaPets.length,
           itemBuilder: (context, index) {
-            Pet pet = _listaPets[index];
+            int petId = _listaPets.keys.elementAt(index);
+            Pet pet = _listaPets[petId]!;
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
@@ -87,7 +96,15 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
                   ),
                   padding: EdgeInsets.all(5.0),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: ((context) =>
+                          PetDetailsPage(pet: pet, id: petId)),
+                    ),
+                  );
+                },
                 child: Container(
                   padding: EdgeInsets.all(8.0),
                   child: Row(
@@ -95,8 +112,8 @@ class _ListaPetsPageState extends State<ListaPetsPage> {
                       if (pet.imagem.isNotEmpty)
                         Image.file(
                           File(pet.imagem),
-                          width: 50, // Ajuste conforme necessário
-                          height: 50, // Ajuste conforme necessário
+                          width: 50, 
+                          height: 50, 
                           fit: BoxFit.cover,
                         ),
                       SizedBox(width: 10),

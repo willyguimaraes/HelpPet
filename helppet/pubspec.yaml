@@ -115,6 +115,11 @@ flutter:
    - assets/images/addpet.png
    - assets/images/listpet.png
    - assets/images/pawprint.png
+   - assets/images/vacina.png
+   - assets/images/consultas.png
+   - assets/images/doencas.png
+   - assets/images/exames.png
+   - assets/images/medicamentos.png
 
   #   - images/a_dot_ham.jpeg
 

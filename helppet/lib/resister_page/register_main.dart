@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:helppet/resister_page/pet_model.dart';
 
 import '../components/pet_buttons.dart';
+import '../database/petDao.dart';
 import '../main.dart';
 import 'pet_form.dart';
+
 import 'pets_list.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Helppetcadastro(),
     ),
   );
 }
 
 class Helppetcadastro extends StatelessWidget {
+  const Helppetcadastro({super.key});
+
   @override
   Widget build(BuildContext context) {
     final ThemeData tema = ThemeData();
@@ -30,18 +35,16 @@ class Helppetcadastro extends StatelessWidget {
       home: Scaffold(
         backgroundColor: const Color.fromRGBO(37, 43, 72, 1),
         appBar: AppBar(
-          
           leading: ElevatedButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => Helppet())));
+                  MaterialPageRoute(builder: ((context) => const Helppet())));
             },
             child: const Icon(Icons.arrow_back_sharp),
           ),
           title: const Text(
             "Meus Pets",
             style: TextStyle(
-              
               fontWeight: FontWeight.bold,
               color: Colors.black,
               fontFamily: 'Montserrat',
@@ -72,7 +75,12 @@ class Helppetcadastro extends StatelessWidget {
                   const SizedBox(height: 20),
                   PetButton(
                     imagePath: 'assets/images/listpet.png',
-                    onPressed: () {
+                    onPressed: () async {
+                      final petDao = PetDao();
+                      // ignore: unused_local_variable
+                      Map<int, Pet> listaPets = await petDao.getAllPets();
+                      
+                      // ignore: use_build_context_synchronously
                       Navigator.push(
                           context,
                           MaterialPageRoute(

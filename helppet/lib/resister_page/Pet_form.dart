@@ -5,7 +5,8 @@ import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import '../database/petDao.dart';
-import 'pet_model.dart';
+import 'package:helppet/resister_page/pet_model.dart';
+
 
 void main() {
   runApp(

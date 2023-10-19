@@ -9,8 +9,8 @@ class Pet {
   String proprietarioNome;
   List<Vacina> historicoVacinas;
   List<Medicamento> historicoMedicamentos;
-  List<DoencaLesao> historicoDoencasLesoes;
-  List<ExameProcedimento> historicoExamesProcedimentos;
+  List<Doenca> historicoDoencasLesoes;
+  List<Exame> historicoExames;
   List<Consulta> agendaConsultas;
 
   Pet({
@@ -24,7 +24,7 @@ class Pet {
     this.historicoVacinas = const [],
     this.historicoMedicamentos = const [],
     this.historicoDoencasLesoes = const [],
-    this.historicoExamesProcedimentos = const [],
+    this.historicoExames= const [],
     this.agendaConsultas = const [],
   });
 
@@ -63,6 +63,23 @@ class Vacina {
     required this.data,
     this.reacao = "",
   });
+
+  Map<String, dynamic> toMap(int id) {
+    return {
+      'nome': nome,
+      'data': data,
+      'reacao': reacao,
+      'petId' : id,
+    };
+  }
+
+  factory Vacina.fromMap(Map<String, dynamic> map) {
+    return Vacina(
+      nome: map['nome'],
+      data: map['data'],
+      reacao: map['reacao'] ?? "",
+    );
+  }
 }
 
 class Medicamento {
@@ -75,30 +92,81 @@ class Medicamento {
     required this.dosagem,
     required this.horario,
   });
+
+  Map<String, dynamic> toMap(int id) {
+    return {
+      'nome': nome,
+      'dosagem': dosagem,
+      'horario': horario,
+      'petId' : id,
+    };
+  }
+
+  factory Medicamento.fromMap(Map<String, dynamic> map) {
+    return Medicamento(
+      nome: map['nome'],
+      dosagem: map['dosagem'],
+      horario: map['horario'],
+    );
+  }
 }
 
-class DoencaLesao {
+class Doenca {
   String nome;
   String data;
   String tratamento;
 
-  DoencaLesao({
+  Doenca({
     required this.nome,
     required this.data,
     this.tratamento = "",
   });
+
+  Map<String, dynamic> toMap(int id) {
+    return {
+      'nome': nome,
+      'data': data,
+      'tratamento': tratamento,
+      'petId' : id,
+    };
+  }
+
+  factory Doenca.fromMap(Map<String, dynamic> map) {
+    return Doenca(
+      nome: map['nome'],
+      data: map['data'],
+      tratamento: map['tratamento'] ?? "",
+    );
+  }
 }
 
-class ExameProcedimento {
+class Exame {
   String nome;
   String data;
   String resultado;
 
-  ExameProcedimento({
+  Exame({
     required this.nome,
     required this.data,
     this.resultado = "",
   });
+
+  Map<String, dynamic> toMap(int id) {
+    return {
+      'nome': nome,
+      'data': data,
+      'resultado': resultado,
+      'petId' : id,
+    };
+  }
+
+  factory Exame.fromMap(Map<String, dynamic> map) {
+    return Exame(
+      nome: map['nome'],
+      data: map['data'],
+      resultado: map['resultado'] ?? "",
+    );
+  }
 }
 
 class Consulta {
@@ -109,4 +177,20 @@ class Consulta {
     required this.data,
     required this.tipo,
   });
+
+  Map<String, dynamic> toMap(int id) {
+    return {
+      'data': data,
+      'tipo': tipo,
+      'petId' : id,
+    };
+  }
+
+  factory Consulta.fromMap(Map<String, dynamic> map) {
+    return Consulta(
+      data: map['data'],
+      tipo: map['tipo'],
+    );
+  }
 }
+
