@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:helppet/first_aid_detail.dart';
+import 'package:helppet/first_aid_page/first_aid_detail.dart';
 
-import 'main.dart';
+import '../main.dart';
 
 void main() {
   runApp(

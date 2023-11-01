@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:helppet/models/disease_model.dart';
+import 'package:helppet/models/pet_model.dart';
 import 'package:helppet/pet_monitoring/monitoring_menus/disease_menu.dart';
-import 'package:helppet/resister_page/pet_model.dart';
 import 'package:intl/intl.dart';
 
 import '../../database/petDao.dart';

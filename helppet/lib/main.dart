@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'components/map_utils.dart';
 import 'components/pet_buttons.dart';
 import 'components/vet_Button.dart';
-import 'first_aid_list.dart';
+import 'first_aid_page/first_aid_list.dart';
 import 'resister_page/register_main.dart';
 
 void main() {

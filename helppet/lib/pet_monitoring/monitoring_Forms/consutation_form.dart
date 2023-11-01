@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:helppet/models/consutation_model.dart';
+import 'package:helppet/models/pet_model.dart';
 import 'package:intl/intl.dart';
 
 import '../../database/petDao.dart';
-import 'package:helppet/resister_page/pet_model.dart';
 import '../monitoring_menus/consultation_menu.dart';
 
 class ConsultationForm extends StatelessWidget {
@@ -21,6 +22,7 @@ class ConsultationForm extends StatelessWidget {
           background: Color.fromRGBO(37, 43, 72, 1.0),
         ),
       ),
+      debugShowCheckedModeBanner: false,
       home: ConsultationFormPage(
         id: petId, pet: pet,
 

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:helppet/models/pet_model.dart';
 import 'dart:io';
 
-import 'package:helppet/resister_page/pet_model.dart';
+
 import '../database/petDao.dart';
 import '../pet_monitoring/pet_details.dart';
 import 'register_main.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'components/map_utils.dart';
-import 'components/vet_Button.dart';
+import '../components/map_utils.dart';
+import '../components/vet_Button.dart';
 import 'first_aid_list.dart';
 
 void main() {

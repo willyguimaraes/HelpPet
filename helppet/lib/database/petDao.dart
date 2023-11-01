@@ -1,5 +1,10 @@
+import 'package:helppet/models/consutation_model.dart';
+import 'package:helppet/models/disease_model.dart';
+import 'package:helppet/models/exam_model.dart';
+import 'package:helppet/models/medicine_model.dart';
+import 'package:helppet/models/pet_model.dart';
+import 'package:helppet/models/vaccine_model.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:helppet/resister_page/pet_model.dart';
 import 'db.dart';
 
 class PetDao {
@@ -73,4 +78,15 @@ class PetDao {
   Future<List<Map<String, dynamic>>> getByPetId(int petId, String table) async {
     return await dbPet.getByPetId(petId, table);
   }
+
+  Future<int> deletePet(int petId) async {
+  Database db = await dbPet.database;
+  return await db.delete('pets', where: 'id = ?', whereArgs: [petId]);
+}
+
+Future<int> updatePet(Pet pet, int id) async {
+  Database db = await dbPet.database;
+  return await db.update('pets', pet.toMap(), where: 'id = ?', whereArgs: [id]);
+}
+
 }

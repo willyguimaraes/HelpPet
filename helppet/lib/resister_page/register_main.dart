@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helppet/resister_page/pet_model.dart';
+import 'package:helppet/models/pet_model.dart';
+
 
 import '../components/pet_buttons.dart';
 import '../database/petDao.dart';
@@ -11,6 +12,7 @@ import 'pets_list.dart';
 void main() {
   runApp(
     const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Helppetcadastro(),
     ),
   );

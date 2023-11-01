@@ -1,40 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:helppet/models/pet_model.dart';
-import 'package:helppet/resister_page/register_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import '../database/petDao.dart';
+import 'pets_list.dart';
 
+class PetEditForm extends StatefulWidget {
+  final Pet pet;
+  final int id;
 
-void main() {
-  runApp(
-    const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: PetForm(),
-    ),
-  );
-}
-
-class PetForm extends StatelessWidget {
-  
-  const PetForm({super.key});
+  const PetEditForm({required this.pet, required this.id, Key? key})
+      : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final ThemeData tema = ThemeData();
-    return MaterialApp(
-      theme: tema.copyWith(
-        colorScheme: tema.colorScheme.copyWith(
-          primary: Color.fromRGBO(91, 154, 139, 1.0),
-          secondary: Color.fromARGB(255, 0, 0, 0),
-          background: Color.fromRGBO(37, 43, 72, 1.0),
-        ),
-      ),
-      home: PetFormPage(),
-    );
-  }
+  _PetEditFormState createState() => _PetEditFormState(id: id);
 }
 
 const TextStyle customTextStyle = TextStyle(
@@ -44,26 +25,42 @@ const TextStyle customTextStyle = TextStyle(
   fontFamily: 'Montserrat',
 );
 
-class PetFormPage extends StatefulWidget {
-  const PetFormPage({super.key});
-  @override
-  _PetFormPageState createState() => _PetFormPageState();
-}
-
-class _PetFormPageState extends State<PetFormPage>
-    with AutomaticKeepAliveClientMixin<PetFormPage> {
+class _PetEditFormState extends State<PetEditForm> {
   final _formKey = GlobalKey<FormState>();
-  @override
-  bool get wantKeepAlive => true;
+  final int id;
+
+  _PetEditFormState({required this.id});
+
   String imagem = "";
   File? _pickedImage;
-  String nome = "";
-  String especie = "";
-  String raca = "";
-  String cor = "";
-  String dataNascimento = "";
-  String proprietarioNome = "";
-  DateTime? selectedDate;
+  late String nome;
+  late String especie;
+  late String raca;
+  late String cor;
+  late String dataNascimento;
+  late String proprietarioNome;
+  late DateTime? selectedDate;
+
+  final _petDao = PetDao();
+
+  @override
+  void initState() {
+    super.initState();
+
+    _initializeFields();
+  }
+
+  void _initializeFields() {
+    nome = widget.pet.nome;
+    especie = widget.pet.especie;
+    raca = widget.pet.raca;
+    cor = widget.pet.cor;
+    dataNascimento = widget.pet.dataNascimento;
+    proprietarioNome = widget.pet.proprietarioNome;
+    selectedDate = DateFormat("dd/MM/yyyy").parse(dataNascimento);
+    _pickedImage = File(widget.pet.imagem);
+    imagem = widget.pet.imagem;
+  }
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = (await showDatePicker(
@@ -72,11 +69,13 @@ class _PetFormPageState extends State<PetFormPage>
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
     ))!;
-    if (picked != selectedDate)
+
+    if (picked != selectedDate) {
       setState(() {
         selectedDate = picked;
         dataNascimento = DateFormat('dd/MM/yyyy').format(selectedDate!);
       });
+    }
   }
 
   Future<String> saveImageToFileSystem(File? imageFile) async {
@@ -105,31 +104,16 @@ class _PetFormPageState extends State<PetFormPage>
     imagem = await saveImageToFileSystem(_pickedImage);
   }
 
-  final _petDao = PetDao();
-
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Scaffold(
       appBar: AppBar(
-        leading: ElevatedButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: ((context) => Helppetcadastro())));
-          },
-          child: const Icon(Icons.arrow_back_sharp),
-        ),
         title: const Text(
-          "Cadastrar Pet",
-          style: TextStyle(
-            fontFamily: 'Montserrat',
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
+          "Editar Pet",
+          style: customTextStyle,
         ),
       ),
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: const Color.fromRGBO(37, 43, 72, 1),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Form(
@@ -137,7 +121,6 @@ class _PetFormPageState extends State<PetFormPage>
           child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
-                SizedBox(height: 8.0),
                 Container(
                   margin: EdgeInsets.all(8.0),
                   padding: EdgeInsets.all(16.0),
@@ -148,7 +131,12 @@ class _PetFormPageState extends State<PetFormPage>
                   child: ListTile(
                     title: Text(
                       'Imagem do pet',
-                      style: customTextStyle,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
                     subtitle: _pickedImage == null
                         ? Text(
@@ -160,8 +148,7 @@ class _PetFormPageState extends State<PetFormPage>
                             height: 300.0,
                             child: Image.file(
                               _pickedImage!,
-                              fit: BoxFit
-                                  .cover, // Para fazer a imagem ocupar todo o container
+                              fit: BoxFit.cover,
                             ),
                           ),
                     trailing: _pickedImage == null
@@ -179,6 +166,7 @@ class _PetFormPageState extends State<PetFormPage>
                     color: Theme.of(context).colorScheme.primary,
                   ),
                   child: TextFormField(
+                    initialValue: widget.pet.nome,
                     style: customTextStyle,
                     decoration: InputDecoration(
                       labelText: 'Nome do Pet',
@@ -224,6 +212,7 @@ class _PetFormPageState extends State<PetFormPage>
                           fontFamily: 'Montserrat',
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
+                          color: Colors.black,
                         ),
                       ),
                       Checkbox(
@@ -244,6 +233,7 @@ class _PetFormPageState extends State<PetFormPage>
                           fontFamily: 'Montserrat',
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
+                          color: Colors.black,
                         ),
                       ),
                     ],
@@ -258,6 +248,7 @@ class _PetFormPageState extends State<PetFormPage>
                     color: Theme.of(context).colorScheme.primary,
                   ),
                   child: TextFormField(
+                    initialValue: widget.pet.raca,
                     style: customTextStyle,
                     decoration: InputDecoration(
                       labelText: 'Raça',
@@ -284,6 +275,7 @@ class _PetFormPageState extends State<PetFormPage>
                     color: Theme.of(context).colorScheme.primary,
                   ),
                   child: TextFormField(
+                    initialValue: widget.pet.cor,
                     style: customTextStyle,
                     decoration: InputDecoration(
                       labelText: 'Cor',
@@ -314,16 +306,22 @@ class _PetFormPageState extends State<PetFormPage>
                     title: const Text(
                       'Data de Nascimento',
                       style: TextStyle(
-                        fontFamily: 'Montserrat',
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     subtitle: Text(
                       selectedDate == null
                           ? 'Selecione a data'
                           : DateFormat('dd/MM/yyyy').format(selectedDate!),
-                      style: TextStyle(fontFamily: 'Montserrat'),
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
                     onTap: () => _selectDate(context),
                   ),
@@ -337,6 +335,7 @@ class _PetFormPageState extends State<PetFormPage>
                     color: Theme.of(context).colorScheme.primary,
                   ),
                   child: TextFormField(
+                    initialValue: widget.pet.proprietarioNome,
                     style: customTextStyle,
                     decoration: InputDecoration(
                       labelText: 'Nome do proprietário',
@@ -360,7 +359,7 @@ class _PetFormPageState extends State<PetFormPage>
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
 
-                      Pet novoPet = Pet(
+                      Pet petAtualizado = Pet(
                         imagem: imagem,
                         nome: nome,
                         especie: especie,
@@ -370,7 +369,7 @@ class _PetFormPageState extends State<PetFormPage>
                         proprietarioNome: proprietarioNome,
                       );
 
-                      await _petDao.insertPet(novoPet);
+                      await _petDao.updatePet(petAtualizado, id);
 
                       // ignore: use_build_context_synchronously
                       showDialog(
@@ -382,21 +381,29 @@ class _PetFormPageState extends State<PetFormPage>
                               backgroundColor:
                                   Theme.of(context).colorScheme.primary,
                               title: const Text(
-                                'Cadastro realizado',
-                                style: customTextStyle,
+                                'Atualização realizada',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontFamily: 'Montserrat',
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                               content: Text(
-                                "$nome cadastrado(a) com sucesso!",
-                                style: customTextStyle,
+                                "$nome atualizado(a) com sucesso!",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontFamily: 'Montserrat',
+                                ),
                                 textAlign: TextAlign.center,
                               ),
                               actions: <Widget>[
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: Theme.of(context)
-                                        .colorScheme
-                                        .background,
+                                    backgroundColor: const Color.fromRGBO(37, 43, 72, 1),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20.0),
                                     ),
@@ -407,7 +414,7 @@ class _PetFormPageState extends State<PetFormPage>
                                         context,
                                         MaterialPageRoute(
                                             builder: ((context) =>
-                                                Helppetcadastro())));
+                                                ListaPetsPage())));
                                   },
                                   child: const Text(
                                     'OK',
@@ -433,7 +440,7 @@ class _PetFormPageState extends State<PetFormPage>
                   ),
                   child: ListTile(
                     title: Text(
-                      'Cadastrar Pet',
+                      'Salvar Alterações',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:helppet/database/petDao.dart';
-import 'package:helppet/resister_page/pet_model.dart';
+import 'package:helppet/models/pet_model.dart';
 
 import '../monitoring_Forms/medicine_form.dart';
 import '../pet_details.dart';
